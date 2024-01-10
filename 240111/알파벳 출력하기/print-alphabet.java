@@ -15,6 +15,9 @@ public class Main {
             for (int j = 0; j <= i; j++) {
                 sb.append((char)(a));
                 a++;
+                if(a == 91){
+                    a = 65;
+                }
             }
             sb.append("\n");
         }
