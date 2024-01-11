@@ -17,17 +17,17 @@ public class Main {
 
             int sum = 0;
             int cnt = 0;
-            for (int j = 1; j < i; j++) {
+            for (int j = 1; j <= i; j++) {
                 if (i % j == 0) {
                     cnt++;
                 }
             }
-            
+
             if(cnt == 3){
                 res++;
             }
 
-            
+
 
 
         }
