@@ -21,15 +21,15 @@ public class Main {
             int cnt = i;
             for (int j = 0; j < n; j++) {
                 arr[i-1][j] = cnt;
-                cnt+=5;
+                cnt+=n;
             }
         }
-        
+
         for(int i = 0; i < n; i++){
             for(int j = 0; j < n; j++){
                 sb.append(arr[i][j] + " ");
             }
-            
+
             sb.append("\n");
         }
 
