@@ -1,5 +1,7 @@
 import java.io.*;
+import java.util.ArrayDeque;
 import java.util.Arrays;
+import java.util.Deque;
 import java.util.StringTokenizer;
 
 public class Main {
@@ -14,12 +16,16 @@ public class Main {
 
         String str = st.nextToken();
 
-        for(int i = str.length()-1; i >= 0; i-=2){
-            sb.append(str.charAt(i));
+        Deque<Character> dq = new ArrayDeque<>();
+
+        for(int i = 1; i < str.length(); i+=2){
+            dq.add(str.charAt(i));
         }
 
+        while(!dq.isEmpty()){
+            sb.append(dq.pollLast());
+        }
 
-       
 
         bw.write(sb.toString());
         bw.flush();
