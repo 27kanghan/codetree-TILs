@@ -15,17 +15,18 @@ public class Main {
 
         boolean flags;
         int index = -1;
-        for (int i = 0; i < str.length(); i++) {
+        for (int i = 0; i <= str.length()-st2.length(); i++) {
             flags = true;
-            for (int j = i; j < st2.length(); j++) {
-                if (str.charAt(j) != st2.charAt(j)) {
+            for (int j = 0; j < st2.length(); j++) {
+                if (str.charAt(j + i) != st2.charAt(j)) {
                     flags = false;
                 }
-                if(flags){
-                    index = i;
+            }
+            if (flags) {
+                index = i;
+                break;
             }
         }
-    }
         sb.append(index);
 
 
@@ -33,5 +34,5 @@ public class Main {
         bw.flush();
         bw.close();
 
-}
+    }
 }
