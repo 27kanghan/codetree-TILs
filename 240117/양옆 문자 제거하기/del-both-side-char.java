@@ -14,7 +14,7 @@ public class Main {
 
         String str = br.readLine();
 
-        str = str.substring(0,2) + str.substring(3, str.length()-2) + str.substring(str.length()-1);
+        str = str.substring(0,1) + str.substring(2, str.length()-2) + str.substring(str.length()-1);
 
 
         sb.append(str);
