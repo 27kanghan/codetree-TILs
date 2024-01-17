@@ -15,6 +15,8 @@ public class Main {
 
         int n = Integer.parseInt(st.nextToken());
 
+        char arr[] = str.toCharArray();
+
         for(int i = 0; i < n; i++){
             st = new StringTokenizer(br.readLine());
             int num = Integer.parseInt(st.nextToken());
@@ -22,20 +24,21 @@ public class Main {
             switch (num){
                 case 1 :
                     str = str.substring(1, str.length()) + str.substring(0,1);
+                    sb.append(str);
                     break;
                 case 2 :
                     str = str.substring(str.length()-1, str.length()) + str.substring(0, str.length()-1);
+                    sb.append(str);
                     break;
                 case 3 :
-                    String newStr = "";
                     for(int j = str.length()-1; j>=0; j--){
-                        newStr += str.substring(j, j+1);
+                        sb.append(str.substring(j, j+1));
+
                     }
-                    str = newStr;
                     break;
             }
-            sb.append(str);
             sb.append("\n");
+
 
         }
         bw.write(sb.toString());
