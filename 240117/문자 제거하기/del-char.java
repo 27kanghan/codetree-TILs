@@ -23,7 +23,7 @@ public class Main {
             int num = Integer.parseInt(st.nextToken());
 
 
-            if (num > str.length()) {
+            if (num > str.length()-1 || num < 0) {
                 str = str.substring(0, str.length() - 1);
             }else if(num == 0){
                 str = str.substring(1, str.length());
@@ -31,7 +31,6 @@ public class Main {
             else {
                 str = str.substring(0, num) + str.substring(num+1);
             }
-            
             sb.append(str);
             sb.append("\n");
 
