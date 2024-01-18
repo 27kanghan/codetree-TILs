@@ -24,13 +24,17 @@ public class Main {
 
         int sum = 0;
         for (int i = 0; i < 2; i++) {
-
+            String newString = "";
             for(int j = 0; j < arr[i].length(); j++){
                 int i1 = arr[i].charAt(j) - '0';
-                if( i1 < 0 || i1 > 10 ){
-                    sum += Integer.parseInt(arr[i].substring(0, j));
+                if( i1 >= 0 && i1 < 10){
+                    newString += arr[i].substring(j, j+1);
+                }else{
+                    break;
                 }
             }
+
+            sum += Integer.parseInt(newString);
         }
 
         sb.append(sum);
