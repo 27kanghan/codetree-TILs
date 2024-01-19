@@ -21,22 +21,25 @@ public class Main {
         int cnt = 0;
         boolean flags = false;
 
-        for(int i = 0; i < strLen; i++){
-            cnt++;
-            str2 = str2.substring(str2.length()-1, str2.length()) + str2.substring(0, str2.length()-1);
-            if(str1.equals(str2)){
-                flags = true;
-                break;
+        if (str1.equals(str2)) {
+            sb.append(0);
+        } else {
+
+            for (int i = 0; i < strLen; i++) {
+                cnt++;
+                str2 = str2.substring(str2.length() - 1, str2.length()) + str2.substring(0, str2.length() - 1);
+                if (str1.equals(str2)) {
+                    flags = true;
+                    break;
+                }
+            }
+
+            if (flags) {
+                sb.append(cnt);
+            } else {
+                sb.append(-1);
             }
         }
-
-        if(flags){
-            sb.append(cnt);
-        }else{
-            sb.append(-1);
-        }
-
-
 
 
         bw.write(sb.toString());
