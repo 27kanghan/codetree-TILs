@@ -31,13 +31,13 @@ public class Main {
         int max = Integer.MIN_VALUE;
 
         if(n < m) {
-            for (int i = 1; i < n; i++){
+            for (int i = 1; i <= n; i++){
                 if(( m % i == 0) && (n % i == 0)){
                     max = Math.max(max,i);
                 }
             }
         }else{
-            for (int i = 1; i < m; i++){
+            for (int i = 1; i <= m; i++){
                 if(( m % i == 0) && (n % i == 0)){
                     max = Math.max(max,i);
                 }
