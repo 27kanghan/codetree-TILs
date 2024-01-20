@@ -28,24 +28,27 @@ public class Main {
         if (n == m){
             sb.append(n);
         }
-        int max = Integer.MIN_VALUE;
+        
+        else {
+            int max = Integer.MIN_VALUE;
 
-        if(n < m) {
-            for (int i = 1; i <= n; i++){
-                if(( m % i == 0) && (n % i == 0)){
-                    max = Math.max(max,i);
+            if (n < m) {
+                for (int i = 1; i <= n; i++) {
+                    if ((m % i == 0) && (n % i == 0)) {
+                        max = Math.max(max, i);
+                    }
                 }
-            }
-        }else{
-            for (int i = 1; i <= m; i++){
-                if(( m % i == 0) && (n % i == 0)){
-                    max = Math.max(max,i);
+            } else {
+                for (int i = 1; i <= m; i++) {
+                    if ((m % i == 0) && (n % i == 0)) {
+                        max = Math.max(max, i);
+                    }
                 }
+
             }
 
+            sb.append(max);
         }
-
-        sb.append(max);
     }
 
 
