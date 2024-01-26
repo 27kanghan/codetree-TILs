@@ -44,7 +44,10 @@ public class Main {
 
     private static void valid(int year) {
 
-        if(year % 4 == 0 || (year % 4 == 0 && year % 100 == 0 && year % 400 == 0)){
+        if((year % 4 == 0 && year % 100 == 0)){
+            dayOfMonth[1] = 28;
+        }
+        else if( year % 4 == 0 || (year % 4 == 0 && year % 100 == 0 && year % 400 == 0)){
             dayOfMonth[1] = 29;
         }else{
             dayOfMonth[1] = 28;
