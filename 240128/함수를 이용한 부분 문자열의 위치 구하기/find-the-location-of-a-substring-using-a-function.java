@@ -17,7 +17,7 @@ public class Main {
         String s = br.readLine();
         boolean flags = false;
         for (int i = 0; i < str.length() - 1; i++) {
-            if (str.substring(i , i +  2).equals(s)) {
+            if (str.substring(i , i + s.length()).equals(s)) {
                 sb.append(i);
                 flags = true;
             }
