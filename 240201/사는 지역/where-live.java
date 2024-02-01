@@ -38,7 +38,7 @@ public class Main {
         String name1[] = new String[N];
 
 
-        for(int i = 0; i < 3; i++) {
+        for(int i = 0; i < N; i++) {
             st = new StringTokenizer(br.readLine());
             String name = st.nextToken();
             String phoneNumber = st.nextToken();
@@ -53,8 +53,8 @@ public class Main {
 
         int idx = 0;
 
-        for(int i = 0; i < 3; i++){
-            if(name1[2].equals(codeTree[i].name)){
+        for(int i = 0; i < N; i++){
+            if(name1[N-1].equals(codeTree[i].name)){
                 idx = i;
             }
         }
