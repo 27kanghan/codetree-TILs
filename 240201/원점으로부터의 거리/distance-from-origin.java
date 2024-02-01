@@ -22,7 +22,7 @@ public class Main {
 
         @Override
         public int compareTo(CodeTree o) {
-            return Math.abs(this.x+this.y) - Math.abs(o.x + o.y);
+            return (Math.abs(this.x) + Math.abs(this.y)) - (Math.abs(o.x) + Math.abs(o.y));
         }
     }
 
