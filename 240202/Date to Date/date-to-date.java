@@ -20,18 +20,21 @@ public class Main {
         int m2 = Integer.parseInt(st.nextToken());
         int d2 = Integer.parseInt(st.nextToken());
 
-        int depth = dayOfMonth[m1-1] - d1;
+        if(m1 == m2 && d1 == d2){
+            sb.append(1);
+        }else {
 
-        for(int i = m1; i < m2-1; i++){
-            depth += dayOfMonth[i];
+            int depth = dayOfMonth[m1 - 1] - d1;
+
+            for (int i = m1; i < m2 - 1; i++) {
+                depth += dayOfMonth[i];
+            }
+
+            depth += d2 + 1;
+
+
+            sb.append(depth);
         }
-
-        depth += d2 + 1 ;
-
-
-
-        sb.append(depth);
-
 
         bw.write(sb.toString());
         bw.flush();
