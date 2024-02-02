@@ -22,6 +22,8 @@ public class Main {
 
         if(m1 == m2 && d1 == d2){
             sb.append(1);
+        }else if(m1 == m2){
+            sb.append(d2-d1 + 1);
         }else {
 
             int depth = dayOfMonth[m1 - 1] - d1;
