@@ -22,23 +22,21 @@ public class Main {
         int res = 0;
 
         if (a > day) {
-            sb.append(-1);
+            res = -1;
         } else if (a == day) {
             if(b > hour){
-                sb.append(-1);
+                res = (-1);
             }
             if(b <= hour){
                if(c > min){
-                   sb.append(-1);
+                   res = (-1);
                }
             }
         } else {
             while (true) {
-
                 if (a == day && b == hour && c == min) {
                     break;
                 }
-
                 res++;
                 c++;
                 if (c == 60) {
@@ -52,8 +50,11 @@ public class Main {
                 }
 
             }
-            sb.append(res);
+
         }
+
+
+        sb.append(res);
         bw.write(sb.toString());
         bw.flush();
         bw.close();
