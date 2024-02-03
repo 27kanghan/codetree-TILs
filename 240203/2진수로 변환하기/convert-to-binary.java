@@ -13,7 +13,7 @@ public class Main {
 
         int N = Integer.parseInt(br.readLine());
 
-        int arr[] = new int[N];
+        int arr[] = new int[21];
 
         int cnt = 0;
 
