@@ -17,15 +17,18 @@ public class Main {
 
         int cnt = 0;
 
-        while(N > 2) {
+        while(true) {
 
+            if(N < 2){
+                arr[cnt++] = N;
+                break;
+            }
             arr[cnt++] = N % 2;
             N = N/2;
 
         }
-        arr[cnt] = N;
 
-        for(int i = cnt; i >= 0; i--) {
+        for(int i = cnt-1; i >= 0; i--) {
             sb.append(arr[i]);
         }
 
