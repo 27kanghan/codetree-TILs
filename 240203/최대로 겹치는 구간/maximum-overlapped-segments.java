@@ -21,25 +21,20 @@ public class Main {
             st = new StringTokenizer(br.readLine());
             int a = Integer.parseInt(st.nextToken());
             int b = Integer.parseInt(st.nextToken());
-            int cnt = 0;
 
-            for(int j = a+100; j <= b+100; j++){
+            for(int j = a+100; j < b+100; j++){
                 arr[j]++;
-                if(arr[j] > 1){
-                    cnt++;
-                }
             }
 
-            if(cnt > 1){
-                res++;
-            }
-
-
+        }
+        int max = 0;
+        for(int i = 0; i < arr.length; i++){
+            max = Math.max(max, arr[i]);
         }
 
 
 
-        sb.append(res);
+        sb.append(max);
 
         bw.write(sb.toString());
         bw.flush();
