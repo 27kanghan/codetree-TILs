@@ -8,8 +8,8 @@ public class Main {
     static StringTokenizer st;
     static StringBuilder sb = new StringBuilder();
 
-    static String dayOfWeek[] = {"Mon", "Tue", "Wed", "Thu", "Fri","Sat","Sun"};
-    static int dayOfMonth[] = {0,31,29,31,30,31,30,31,31,30,31,30,31};
+    static String dayOfWeek[] = {"Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"};
+    static int dayOfMonth[] = {0, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 
     public static void main(String[] args) throws IOException {
 
@@ -25,7 +25,7 @@ public class Main {
 
         String day = br.readLine();
 
-        int totalDay = cal(m1,m2,d1,d2);
+        int totalDay = cal(m1, m2, d1, d2);
 
         int cal = totalDay / 7;
 
@@ -35,18 +35,20 @@ public class Main {
 
         int dayNum = 0;
 
-        for(int i = 0; i < 7; i++){
-            if(dayOfWeek.equals(day)){
+        for (int i = 0; i < 7; i++) {
+            if (dayOfWeek.equals(day)) {
                 dayNum = i;
             }
         }
-        if(totalDay >= dayNum){
-            res+=1;
+
+        if (totalDay > 0) {
+
+            if (totalDay >= dayNum) {
+                res += 1;
+            }
         }
 
         sb.append(res);
-
-
 
 
         bw.write(sb.toString());
@@ -59,24 +61,24 @@ public class Main {
     private static int cal(int m1, int m2, int d1, int d2) {
 
         int total1 = 0;
-        for(int i = 1; i < m1; i++){
+        for (int i = 1; i < m1; i++) {
             total1 += dayOfMonth[i];
         }
 
-        total1+=d1;
+        total1 += d1;
 
 
         int total2 = 0;
 
-        for(int i = 1; i < m2; i++){
+        for (int i = 1; i < m2; i++) {
             total2 += dayOfMonth[i];
         }
-        total2 +=d2;
+        total2 += d2;
 
         int total = total2 - total1;
 
-        if(total < 0){
-            while(total < 0){
+        if (total < 0) {
+            while (total < 0) {
                 total += 7;
             }
         }
