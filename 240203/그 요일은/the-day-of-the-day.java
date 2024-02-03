@@ -29,24 +29,22 @@ public class Main {
 
         int cal = totalDay / 7;
 
-        int res = 0;
-
-        res += cal;
-
         int dayNum = 0;
 
+        int res = 0;
+
         for (int i = 0; i < 7; i++) {
-            if (dayOfWeek.equals(day)) {
+            if (dayOfWeek[i].equals(day)) {
                 dayNum = i;
             }
         }
 
-        if (totalDay > 0) {
 
-            if (totalDay >= dayNum) {
-                res += 1;
-            }
+        if (totalDay >= dayNum) {
+          res += 1;
         }
+
+        res += cal;
 
         sb.append(res);
 
