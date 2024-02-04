@@ -12,7 +12,7 @@ public class Main {
     public static void main(String[] args) throws IOException {
 
         int K = 1000;
-        int arr[] = new int[K * 2 + 1];
+        int arr[] = new int[K * K + 1];
 
         int N = Integer.parseInt(br.readLine());
 
@@ -24,13 +24,11 @@ public class Main {
             while(num-- > 0){
                 if(color.equals("R")){
                     arr[K] = 1;
-                    
-                    if(num > 0)K++;
+                    if(num > 0) K++;
                 }
 
                 if(color.equals("L")){
                     arr[K] = 2;
-                    
                     if(num > 0) K--;
                 }
             }
@@ -41,7 +39,7 @@ public class Main {
         int whiteCnt = 0;
         int blackCnt = 0;
 
-        for(int i = 0; i < 2001; i++){
+        for(int i = 0; i < arr.length; i++){
             if(arr[i] == 1){
                 blackCnt++;
             }else if(arr[i] == 2){
