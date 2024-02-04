@@ -1,80 +1,50 @@
-import java.io.*;
-
-import java.util.*;
+import java.util.Scanner;
 
 public class Main {
-    static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-    static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-    static StringTokenizer st;
-    static StringBuilder sb = new StringBuilder();
+    public static final int MAX_K = 100000;
+    
+    public static int n;
+    public static int[] a = new int[2 * MAX_K + 1];
+    public static int[] cntB = new int[2 * MAX_K + 1];
+    public static int[] cntW = new int[2 * MAX_K + 1];
+    public static int b, w, g;
 
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        // 변수 입력
+        n = sc.nextInt();
 
-
-
-
-    public static void main(String[] args) throws IOException {
-
-        int arr[] = new int [2001];
-        int count[] = new int[2001];
-
-
-        int N = Integer.parseInt(br.readLine());
-
-        int idx = 1000;
-
-        for(int i = 0; i < N; i++) {
-            st = new StringTokenizer(br.readLine());
-            int num = Integer.parseInt(st.nextToken());
-            String dir = st.nextToken();
-            switch (dir) {
-                case "R":
-                    for (int j = idx; j < idx+num; j++) {
-                        arr[j]++;
-                    }
-                    idx += num;
-                    break;
-                case "L":
-                    for (int j = idx-1; j >= idx-num; j--) {
-                        arr[j]++;
-                    }
-                    idx -= num;
-                    break;
-
+        int cur = MAX_K;
+        for(int i = 1; i <= n; i++) {
+            int x = sc.nextInt();
+            char c = sc.next().charAt(0);
+            if(c == 'L') {
+                // x칸 왼쪽으로 칠합니다.
+                while(x-- > 0) {
+                    a[cur] = 1;
+                    cntW[cur]++;
+                    if(x > 0) cur--;
+                }
+            }
+            else {
+                // x칸 오른쪽으로 칠합니다.
+                while(x-- > 0) {
+                    a[cur] = 2;
+                    cntB[cur]++;
+                    if(x > 0) cur++;
+                }
             }
         }
 
-        int white = 0;
-        int black = 0;
-        int gray = 0;
-        for(int i = 0; i < 2001; i++) {
-            if(arr[i] >= 4){
-                gray++;
-                continue;
-            }
-
-            if(arr[i] != 0 && arr[i] % 2 != 0){
-                white++;
-            }else if(arr[i] != 0 && arr[i] % 2 == 0){
-                black++;
-            }
-
+        for(int i = 0; i <= 2 * MAX_K; i++) {
+            // 검은색과 흰색으로 두 번 이상 칠해진 타일은 회색입니다.
+            if(cntB[i] >= 2 && cntW[i] >= 2) g++;
+            // 그렇지 않으면 현재 칠해진 색깔이 곧 타일의 색깔입니다.
+            else if(a[i] == 1) w++;
+            else if(a[i] == 2) b++;
         }
-        sb.append(white);
-        sb.append(" ");
-        sb.append(black);
-        sb.append(" ");
-        sb.append(gray);
-        sb.append(" ");
 
-
-
-        bw.write(sb.toString());
-        bw.flush();
-        bw.close();
-
-
+        // 정답을 출력합니다.
+        System.out.print(w + " " + b + " " + g);
     }
-
-
-
 }
