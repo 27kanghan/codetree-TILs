@@ -16,35 +16,30 @@ public class Main {
         int N = Integer.parseInt(br.readLine());
 
         int idx = 100;
+
         for(int i = 0; i < N; i++) {
             st = new StringTokenizer(br.readLine());
             int num = Integer.parseInt(st.nextToken());
             String dir = st.nextToken();
-
-
-
             switch (dir) {
                 case "R":
-                    for (int j = 0; j < num; j++) {
-                 
-                        arr[idx]++;
-                        idx++;
-
+                    for (int j = idx; j < idx+num; j++) {
+                        arr[j]++;
                     }
+                    idx += num;
                     break;
                 case "L":
-                    for (int j = 0; j<num; j++) {
-                       
-                        arr[idx]++;
-                        idx--;
+                    for (int j = idx-1; j >= idx-num; j--) {
+                        arr[j]++;
                     }
+                    idx -= num;
                     break;
 
             }
         }
-        int cnt = 0;
-        for(int i = 0; i < arr.length; i++) {
 
+        int cnt = 0;
+        for(int i = 0; i < 201; i++) {
             if(arr[i] >= 2){
                 cnt++;
             }
