@@ -12,7 +12,7 @@ public class Main {
     public static void main(String[] args) throws IOException {
 
         int K = 1000;
-        int arr[] = new int[K * K + 1];
+        int arr[] = new int[100001];
 
         int N = Integer.parseInt(br.readLine());
 
