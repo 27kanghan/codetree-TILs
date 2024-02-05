@@ -25,8 +25,8 @@ public class Main {
             int y2 = Integer.parseInt(st.nextToken());
 
 
-            for (int i = idx + y1; i <= idx + y2; i++) {
-                for (int j = idx + x1; j <= idx + x2; j++) {
+            for (int i = idx + y1; i < idx + y2; i++) {
+                for (int j = idx + x1; j < idx + x2; j++) {
                     if (k == 1) {
                         arr[i][j] = 0;
                     } else {
@@ -37,10 +37,10 @@ public class Main {
             }
         }
 
-        int minx = Integer.MAX_VALUE;
-        int miny = Integer.MAX_VALUE;
-        int maxx = Integer.MIN_VALUE;
-        int maxy = Integer.MIN_VALUE;
+        int minx = 9999;
+        int miny = 9999;
+        int maxx = -9999;
+        int maxy = -9999;
 
         for (int i = 0; i < 2001; i++) {
             for (int j = 0; j < 2001; j++) {
@@ -54,15 +54,10 @@ public class Main {
         }
 
 
-        int area = (maxx-minx) * (maxy-miny);
 
-        if(minx == Integer.MAX_VALUE && miny == Integer.MAX_VALUE
-        && maxy == Integer.MIN_VALUE && maxx == Integer.MIN_VALUE){
-            sb.append(0);
-        }else {
+        int area = (Math.abs(maxx)-Math.abs(minx) + 1) * (Math.abs(maxy)-Math.abs(miny) + 1);
 
-            sb.append(area);
-        }
+        sb.append(area);
         bw.write(sb.toString());
         bw.flush();
         bw.close();
