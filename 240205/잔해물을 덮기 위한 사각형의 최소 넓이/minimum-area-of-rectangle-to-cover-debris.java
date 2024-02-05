@@ -41,10 +41,12 @@ public class Main {
         int miny = 9999;
         int maxx = -9999;
         int maxy = -9999;
+        boolean firstRectExist = false;
 
         for (int i = 0; i < 2001; i++) {
             for (int j = 0; j < 2001; j++) {
                 if(arr[i][j] > 0 ) {
+                    firstRectExist = true;
                     minx = Math.min(minx, j);
                     miny = Math.min(miny, i);
                     maxx = Math.max(maxx, j);
@@ -55,8 +57,12 @@ public class Main {
 
 
 
-        int area = (Math.abs(maxx)-Math.abs(minx) + 1) * (Math.abs(maxy)-Math.abs(miny) + 1);
-
+        int area;
+        if(!firstRectExist){
+            area = 0;
+        }else {
+            area = (Math.abs(maxx) - Math.abs(minx) + 1) * (Math.abs(maxy) - Math.abs(miny) + 1);
+        }
         sb.append(area);
         bw.write(sb.toString());
         bw.flush();
