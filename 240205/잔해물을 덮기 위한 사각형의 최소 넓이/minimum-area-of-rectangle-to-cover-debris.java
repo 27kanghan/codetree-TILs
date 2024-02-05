@@ -52,11 +52,17 @@ public class Main {
                 }
             }
         }
-        
+
+
         int area = (maxx-minx) * (maxy-miny);
 
+        if(minx == Integer.MAX_VALUE && miny == Integer.MAX_VALUE
+        && maxy == Integer.MIN_VALUE && maxx == Integer.MIN_VALUE){
+            sb.append(0);
+        }else {
 
-        sb.append(area);
+            sb.append(area);
+        }
         bw.write(sb.toString());
         bw.flush();
         bw.close();
