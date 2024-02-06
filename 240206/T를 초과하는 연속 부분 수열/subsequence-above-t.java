@@ -26,11 +26,12 @@ public class Main {
         int max = 0;
         int plusCnt = 0;
         for(int i = 0; i < N; i++){
-            if((i == 0 && arr[i] > T) || arr[i] > T && arr[i] > T && arr[i] > arr[i-1]  ){
+            if((i == 0 && arr[i] > T) || arr[i] > T && arr[i] > T){
                 plusCnt++;
             }else {
                 plusCnt = 0;
             }
+
 
 
             max = Math.max(max, plusCnt);
