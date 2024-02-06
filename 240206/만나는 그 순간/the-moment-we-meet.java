@@ -55,7 +55,7 @@ public class Main {
 
         int res = 0;
         boolean flags = false;
-        for(int i = 1; i <= sum; i++){
+        for(int i = 1; i < sum; i++){
             if(a[i] == b[i]){
                 res = i;
                 flags = true;
