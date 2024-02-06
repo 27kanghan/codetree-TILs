@@ -16,8 +16,8 @@ public class Main {
         int N = Integer.parseInt(st.nextToken());
         int M = Integer.parseInt(st.nextToken());
 
-        int a[] = new int[2001];
-        int b[] = new int[2001];
+        int a[] = new int[1000*1000+1];
+        int b[] = new int[1000*1000+1];
 
         int sum = 0;
 
