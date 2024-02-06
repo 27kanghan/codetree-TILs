@@ -40,11 +40,13 @@ public class Main {
             if(flags){
                 break;
             }
-
         }
 
-        sb.append(res);
-
+        if(!flags){
+            sb.append(-1);
+        }else {
+            sb.append(res);
+        }
 
         bw.write(sb.toString());
         bw.flush();
