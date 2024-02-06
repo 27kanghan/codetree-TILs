@@ -19,9 +19,9 @@ public class Main {
 
         int cnt = 0;
 
-        int a[] = new int[1001];
+        int a[] = new int[1000 * 100 + 1];
 
-        int b[] = new int[1001];
+        int b[] = new int[1000 * 100 + 1];
 
         int aidx = 0;
         int sum = 0;
