@@ -18,8 +18,8 @@ public class Main {
         int M = Integer.parseInt(st.nextToken());
 
 
-        int a[] = new int [1000001];
-        int b[] = new int [1000001];
+        int a[] = new int [10000001];
+        int b[] = new int [10000001];
 
         int aidx = 1;
         int at = 0;
