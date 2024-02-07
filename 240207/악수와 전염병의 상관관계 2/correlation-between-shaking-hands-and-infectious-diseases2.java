@@ -50,11 +50,14 @@ public class Main {
         int T = Integer.parseInt(st.nextToken());
 
         int arr[] = new int[N+1];
-        boolean isInfection[] = new boolean[N+1];
+        int isInfection[] = new int[N+1];
         Point parr[] = new Point[T];
 
-        arr[P] = K;
-        isInfection[P] = true;
+        for(int i = 1; i < N+1; i++){
+            arr[i] = K;
+        }
+
+        isInfection[P] = 1;
 
         for(int i = 0; i < T; i++){
             st = new StringTokenizer(br.readLine());
@@ -68,35 +71,25 @@ public class Main {
 
 
         Arrays.sort(parr);
-
-     
+        
 
         for(int i = 0; i < T; i++){
-            int a = parr[i].a;
-            int b = parr[i].b;
-            if(arr[a] > 0 && arr[b]>0){
+            int a = parr[i].a ;
+            int b = parr[i].b ;
+             if((a == P || isInfection[a] == 1 ) && arr[a]>0){
                 arr[a]--;
+                isInfection[b] = 1;
+            }else if((b == P || isInfection[b] == 1 ) && arr[b]>0){
                 arr[b]--;
-            }else if(arr[a]>0){
-                arr[a]--;
-                arr[b] = K;
-                isInfection[b] = true;
-            }else if(arr[b]>0){
-                arr[b]--;
-                arr[a] = K;
-                isInfection[a] = true;
+                isInfection[a] = 1;
             }
+   
         }
 
         for(int i = 1; i < N+1; i++){
-            if(isInfection[i]){
-                sb.append(1);
-            }else{
-                sb.append(0);
-            }
+            sb.append(isInfection[i]);
         }
-
-
+        
         bw.write(sb.toString());
         bw.flush();
         bw.close();
