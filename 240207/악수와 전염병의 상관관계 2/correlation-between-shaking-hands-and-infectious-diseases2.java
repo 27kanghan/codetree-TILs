@@ -9,7 +9,7 @@ public class Main {
     static StringBuilder sb = new StringBuilder();
 
 
-    static class Point implements Comparable<Point>{
+    static class Point implements Comparable<Point> {
         int time;
         int a;
         int b;
@@ -49,17 +49,17 @@ public class Main {
         // 테스트케이스
         int T = Integer.parseInt(st.nextToken());
 
-        int arr[] = new int[N+1];
-        int isInfection[] = new int[N+1];
+        int arr[] = new int[N + 1];
+        int isInfection[] = new int[N + 1];
         Point parr[] = new Point[T];
 
-        for(int i = 1; i < N+1; i++){
+        for (int i = 1; i < N + 1; i++) {
             arr[i] = K;
         }
 
         isInfection[P] = 1;
 
-        for(int i = 0; i < T; i++){
+        for (int i = 0; i < T; i++) {
             st = new StringTokenizer(br.readLine());
             int t = Integer.parseInt(st.nextToken());
             int a = Integer.parseInt(st.nextToken());
@@ -69,27 +69,47 @@ public class Main {
         }
 
 
-
         Arrays.sort(parr);
-        
 
-        for(int i = 0; i < T; i++){
-            int a = parr[i].a ;
-            int b = parr[i].b ;
-             if((a == P || isInfection[a] == 1 ) && arr[a]>0){
+//            if((a == P || arr[a] > 0) && (b == P || arr[b]>0)){
+//                arr[a]--;
+//                arr[b]--;
+//            }else
+//        System.out.println(Arrays.toString(parr));
+
+        for (int i = 0; i < T; i++) {
+            int a = parr[i].a;
+            int b = parr[i].b;
+            if(isInfection[a] == 1 && isInfection[b] == 1){
+                arr[a]--;
+                arr[b]--;
+            }
+            if ((a == P || isInfection[a] == 1) && arr[a] > 0) {
                 arr[a]--;
                 isInfection[b] = 1;
-            }else if((b == P || isInfection[b] == 1 ) && arr[b]>0){
+            } else if ((b == P || isInfection[b] == 1) && arr[b] > 0) {
                 arr[b]--;
                 isInfection[a] = 1;
             }
-   
+//            System.out.println(a + " " + b);
+//            System.out.println(i + " " + Arrays.toString(arr));
+//            System.out.println(i + " " + Arrays.toString(isInfection));
         }
 
-        for(int i = 1; i < N+1; i++){
+        for (int i = 1; i < N + 1; i++) {
             sb.append(isInfection[i]);
         }
-        
+
+
+        //101100000100100000000000
+
+        //100000100110110001101010
+        //101100000100100111000001
+        //101100000100100000000001
+
+//        System.out.println(Arrays.toString(isInfection));
+
+
         bw.write(sb.toString());
         bw.flush();
         bw.close();
