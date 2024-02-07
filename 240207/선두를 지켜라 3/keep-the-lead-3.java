@@ -16,8 +16,8 @@ public class Main {
 
         int M = Integer.parseInt(st.nextToken());
 
-        int a[] = new int[1001];
-        int b[] = new int[1001];
+        int a[] = new int[1000 * 1000 + 1];
+        int b[] = new int[1000 * 1000 + 1];
         int totalTime = 0;
 
         int aIdx = 0;
