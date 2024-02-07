@@ -62,7 +62,7 @@ public class Main {
         }
 
 
-        int dif = Math.abs(N-M);
+        int dif = Math.abs(aTime-bTime);
         //부족한 시간만큼 채워주기.
         if(N < M){
             for(int i = aidx; i <= aidx+dif+1; i++){
@@ -90,8 +90,6 @@ public class Main {
         }
 
         sb.append(cnt);
-
-        
 
 
 
