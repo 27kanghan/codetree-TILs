@@ -8,7 +8,7 @@ public class Main {
     static StringTokenizer st;
     static StringBuilder sb = new StringBuilder();
 
-    static int dr[] = {1, -1, 0, 0};
+    static int dr[] = {-1, 1, 0, 0};
     static int dc[] = {0, 0, 1, -1};
 
     public static void main(String[] args) throws IOException {
@@ -22,9 +22,9 @@ public class Main {
 
         st = new StringTokenizer(br.readLine());
 
-        int r = Integer.parseInt(st.nextToken())-1;
+        int r = Integer.parseInt(st.nextToken());
 
-        int c = Integer.parseInt(st.nextToken())-1;
+        int c = Integer.parseInt(st.nextToken());
 
         char dir = st.nextToken().charAt(0);
 
@@ -79,15 +79,11 @@ public class Main {
                     d--;
                 }
             }
-
-
-
         }
 
-
-        sb.append(r+1);
+        sb.append(r);
         sb.append(" ");
-        sb.append(c+1);
+        sb.append(c);
 
 
         bw.write(sb.toString());
@@ -97,7 +93,7 @@ public class Main {
 
 
     private static boolean inRange(int r, int c, int N) {
-        return r >= 0 && r < N && c >= 0 && c < N;
+        return r >= 1 && r <= N && c >= 1 && c <= N;
     }
 
 
