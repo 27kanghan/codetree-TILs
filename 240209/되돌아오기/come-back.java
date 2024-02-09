@@ -54,7 +54,7 @@ public class Main {
             }
 
         }
-        if(cnt > N*sum){
+        if(!flags){
             sb.append(-1);
         }else {
             sb.append(cnt);
