@@ -25,7 +25,7 @@ public class Main {
 
         char num = 65;
 
-        arr[0][0] = num;
+        arr[0][0] = num++;
 
 
         int cnt = N * M -1 ;
@@ -49,7 +49,7 @@ public class Main {
                 continue;
             }
 
-            arr[nr][nc] = ++num;
+            arr[nr][nc] = num++;
             r = nr;
             c = nc;
             cnt--;
