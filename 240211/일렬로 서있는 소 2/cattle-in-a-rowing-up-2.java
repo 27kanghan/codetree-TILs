@@ -29,7 +29,7 @@ public class Main {
                     int b = arr[j];
                     int c = arr[k];
 
-                    if (i < j && j < k && a < b && b < c) {
+                    if ((i < j && j < k) && (a <= b && b <= c)) {
                         cnt++;
                     }
                 }
