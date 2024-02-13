@@ -29,7 +29,7 @@ public class Main {
         }
 
         if(!flags) {
-            arr[0] = '0';
+            arr[str.length()-1] = '0';
             String newStr = String.valueOf(arr);
             num = change(newStr);
             sb.append(num);
