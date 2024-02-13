@@ -7,7 +7,8 @@ public class Main {
     static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
     static StringTokenizer st;
     static StringBuilder sb = new StringBuilder();
-    static class Point implements Comparable<Point>{
+
+    static class Point implements Comparable<Point> {
         int r;
         int c;
         int idx;
@@ -39,31 +40,31 @@ public class Main {
 
         Point arr[] = new Point[N];
 
-        for(int i = 0; i < N; i++){
+        for (int i = 0; i < N; i++) {
             st = new StringTokenizer(br.readLine());
             int r = Integer.parseInt(st.nextToken());
             int c = Integer.parseInt(st.nextToken());
 
-            arr[i] = new Point(r,c,i);
+            arr[i] = new Point(r, c, i);
         }
 
         Arrays.sort(arr);
 
 
 
+
         int min = Integer.MAX_VALUE;
-        for(int i = 1; i < N-1; i++){
+        for (int i = 1; i < N-1; i++) {
             int sum = 0;
             arr[i].idx = N;
             Arrays.sort(arr);
 
-            for(int j = 0; j < N-1; j++){
-                if(i != j){
+            for (int j = 0; j < N-2; j++) {
+                sum += Math.abs(arr[j + 1].r - arr[j].r) + Math.abs(arr[j + 1].c - arr[j].c);
 
-                    sum += Math.abs(arr[j+1].r - arr[j].r) + Math.abs(arr[j+1].c - arr[j].c);
-                }
             }
-            arr[i].idx = i;
+            arr[N-1].idx = i;
+            Arrays.sort(arr);
 
             min = Math.min(sum, min);
         }
