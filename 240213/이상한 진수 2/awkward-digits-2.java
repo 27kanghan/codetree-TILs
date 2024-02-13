@@ -19,17 +19,22 @@ public class Main {
         char arr[] = new char [str.length()];
 
         for(int i = 0; i < str.length(); i++){
+            arr[i] = str.charAt(i);
+        }
+
+        for(int i = 0; i < str.length(); i++){
             if(str.charAt(i)-'0' == 0){
                 flags = true;
             }
         }
+
         if(!flags) {
-            num = change(str);
+            arr[0] = '0';
+            String newStr = String.valueOf(arr);
+            num = change(newStr);
             sb.append(num);
         }else{
-            for(int i = 0; i < str.length(); i++){
-                arr[i] = str.charAt(i);
-            }
+
 
             for(int i = 1; i < str.length(); i++){
                 if(arr[i] == '0'){
