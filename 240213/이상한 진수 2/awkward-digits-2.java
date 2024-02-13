@@ -39,7 +39,7 @@ public class Main {
             for(int i = 1; i < str.length(); i++){
                 if(arr[i] == '0'){
                     arr[i] = '1';
-                }
+
 
                 String newStr = String.valueOf(arr);
 
@@ -48,6 +48,7 @@ public class Main {
                 max = Math.max(max, sum);
 
                 arr[i] = '0';
+                }
             }
             sb.append(max);
         }
