@@ -20,7 +20,8 @@ public class Main {
             arr[i] = Integer.parseInt(br.readLine());
         }
 
-        int max = Integer.MIN_VALUE;
+        int max = -1;
+        
 
         for(int i = 0; i < N; i++){
             for(int j = i+1; j < N; j++){
@@ -31,6 +32,7 @@ public class Main {
                     int c = arr[k];
 
                     if(isCarry(a,b,c)){
+                        
                         sum = a+b+c;
                         max = Math.max(max, sum);
                     }
