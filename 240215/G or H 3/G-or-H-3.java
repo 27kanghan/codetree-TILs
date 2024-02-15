@@ -34,8 +34,9 @@ public class Main {
 
 
         int max = Integer.MIN_VALUE;
+        
 
-        for(int i = 0; i <= maxIdx - K; i++){
+        for(int i = 0; i < 10001-K; i++){
             int sum = 0;
             for(int j = i; j <= i+K; j++){
                 sum += arr[j];
