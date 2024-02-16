@@ -35,15 +35,19 @@ public class Main {
         // G = 1; H = 2;
         int max = Integer.MIN_VALUE;
 
-        for(int i = 0; i <= maxIdx; i++){
+        for(int i = 0; i < 101; i++){
 
-            for(int j = 0; j <= maxIdx; j++){
+            for(int j = 0; j < 101; j++){
                 int g = 0;
                 int h = 0;
                 int sum = 0;
 
+                if(arr[i] == 0 || arr[j] == 0){
+                    continue;
+                }
+
 //                System.out.println("Arrays" + i );
-                for(int k = i; k <= maxIdx; k++){
+                for(int k = i; k < j+1; k++){
 //                    System.out.print(arr[k] + " ");
                     if(arr[k] == 1){
                         g++;
@@ -56,7 +60,7 @@ public class Main {
 
                 if(g == h || h == 0 || g == 0){
 //                    System.out.println(true);
-                    max = Math.max(max, j - i -1 );
+                    max = Math.max(max, j - i);
                 }
 
             }
