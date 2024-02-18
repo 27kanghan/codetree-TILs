@@ -31,12 +31,12 @@ public class Main {
         for(int i = 1; i <= N; i++){
             for(int j = 1; j <= N; j++){
                 for(int k = 1; k <=N; k++){
-                    if(((Math.abs(i-a) <= 2 || Math.abs(N+a-i) <= 2)
-                    && (Math.abs(j-b) <= 2 || Math.abs(N-j+b) <= 2) &&
-                            (Math.abs(k-c) <= 2 || Math.abs(N-k+c) <= 2))
-                    || ((Math.abs(i-q) <= 2 || Math.abs(N-i+q) <= 2) &&
-                            (Math.abs(j-w) <= 2 || Math.abs(N-j+w) <= 2) &&
-                            (Math.abs(k-e) <= 2 || Math.abs(N-k+e) <= 2)))
+                    if(((Math.abs(i-a) <= 2 || Math.abs(i-a) >= N-2)
+                    && (Math.abs(j-b) <= 2 || Math.abs(j-b) >= N-2) &&
+                            (Math.abs(k-c) <= 2 || Math.abs(k-c) >= N-2))
+                    || ((Math.abs(i-q) <= 2 || Math.abs(i-q) >= N-2) &&
+                            (Math.abs(j-w) <= 2 || Math.abs(j-w) >= N-2) &&
+                            (Math.abs(k-e) <= 2 || Math.abs(k-e) >= N-2)))
                     {
                                 cnt++;
                     }
