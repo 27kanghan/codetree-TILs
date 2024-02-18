@@ -104,12 +104,9 @@ public class Main {
 //            System.out.println(str.contains(str2.substring(1,2)) && !str.substring(1,2).equals(str2.substring(1,2)));
 //            System.out.println(str.contains(str2.substring(2,3)) && !str.substring(2,3).equals(str2.substring(2,3)));
 
-            if ((str.contains(str2.substring(0, 1)) && !str.substring(0, 1).equals(str2.substring(0, 1)))
-                    || (str.contains(str2.substring(1, 2)) && !str.substring(1, 2).equals(str2.substring(1, 2)))
-                    || (str.contains(str2.substring(2, 3)) && !str.substring(2, 3).equals(str2.substring(2, 3)))) {
-
-                cnt2++;
-            }
+            if ((str.contains(str2.substring(0, 1)) && !str.substring(0, 1).equals(str2.substring(0, 1))))cnt2++;
+            if ((str.contains(str2.substring(1, 2)) && !str.substring(1, 2).equals(str2.substring(1, 2))))cnt2++;
+            if ((str.contains(str2.substring(2, 3)) && !str.substring(2, 3).equals(str2.substring(2, 3))))cnt2++;
 
 //            System.out.println("arr" + arr[i].num + " " + res + " 2pass cnt2 " + cnt2 + " arr cnt2 " + arr[i].cnt2);
 
