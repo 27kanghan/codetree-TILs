@@ -68,8 +68,11 @@ public class Main {
             }
         }
 
-        sb.append(minRes);
-
+        if(minRes == Integer.MAX_VALUE){
+            sb.append(-1);
+        }else {
+            sb.append(minRes);
+        }
 
         bw.write(sb.toString());
         bw.flush();
