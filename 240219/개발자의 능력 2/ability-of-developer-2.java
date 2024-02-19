@@ -30,7 +30,7 @@ public class Main {
                 int sum1 = arr[i] + arr[j];
                 for(int k = 0; k < 6; k++){
                     for(int l = k+1; l < 6; l++) {
-                        if (i != k && j != l) {
+                        if (i != k && j != l && i != l && j != k) {
                             int sum2 = arr[k] + arr[l];
 
                             int sum3 = 0;
@@ -50,6 +50,9 @@ public class Main {
                             min = Math.min(sum1, Math.min(sum2, sum3));
 
                             res = max - min;
+
+//                            System.out.println("res="+ res);
+
 
                             minRes = Math.min(res, minRes);
 
