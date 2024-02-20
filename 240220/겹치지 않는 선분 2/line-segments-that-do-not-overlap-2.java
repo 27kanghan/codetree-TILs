@@ -1,113 +1,46 @@
-import java.io.*;
-
-import java.util.*;
+import java.util.Scanner;
 
 public class Main {
-    static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-    static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-    static StringTokenizer st;
-    static StringBuilder sb = new StringBuilder();
+    public static final int MAX_N = 100;
+    
+    public static int n;
+    public static int[] x1 = new int[MAX_N];
+    public static int[] x2 = new int[MAX_N];
 
-    static class Point implements Comparable<Point> {
-        int x;
-        int y;
-        boolean flags;
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        // 입력
+        n = sc.nextInt();
 
-        Point(int x, int y, boolean flags) {
-            this.x = x;
-            this.y = y;
-            this.flags = flags;
+        for(int i = 0; i < n; i++) {
+            x1[i] = sc.nextInt();
+            x2[i] = sc.nextInt();
         }
 
-        @Override
-        public String toString() {
-            return "Point{" +
-                    "x=" + x +
-                    ", y=" + y +
-                    ", flags=" + flags +
-                    '}';
-        }
+        int ans = 0;
 
-        @Override
-        public int compareTo(Point o) {
-            return this.x - o.x;
-        }
-    }
+        // 다른 선분과 겹치지 않는 선분의 수를 구합니다.
+        for(int i = 0; i < n; i++) {
+            // i번째 선분이 다른 선분과 겹치지 않는지 확인합니다.
 
+            boolean overlap = false;
 
-    public static void main(String[] args) throws IOException {
+            for(int j = 0; j < n; j++) {
+                // 자기 자신은 제외합니다.
+                if(j == i) continue;
 
-        int N = Integer.parseInt(br.readLine());
-
-        Point arr[] = new Point[N];
-
-        for (int i = 0; i < N; i++) {
-            st = new StringTokenizer(br.readLine());
-            int x = Integer.parseInt(st.nextToken());
-            int y = Integer.parseInt(st.nextToken());
-
-            arr[i] = new Point(x, y, false);
-
-        }
-
-        Arrays.sort(arr);
-
-        int cnt = 0;
-
-        for (int i = 0; i < N; i++) {
-            for (int j = 0; j < N; j++) {
-                if (i == j) continue;
-                int x = arr[i].x;
-                int y = arr[i].y;
-
-                int a = arr[j].x;
-                int b = arr[j].y;
-
-                // a랑 b가 x,y안에 있거나 x랑 y가 a,b에 있다.
-
-
-                if (x < y) {
-                    if (a < b) {
-                        if (a > x && a < y && b < y && b > x) {
-                            arr[i].flags = true;
-                            arr[j].flags = true;
-                        }
-                    } else if (a > b) {
-                        if (a < y) {
-                            arr[i].flags = true;
-                            arr[j].flags = true;
-                        }
-                    }
-                } else if (x > y) {
-                    if (a > b) {
-                        if (a < y) {
-                            arr[i].flags = true;
-                            arr[j].flags = true;
-                        }
-                    } else if (a < b) {
-                        if (a < y) {
-                            arr[i].flags = true;
-                            arr[j].flags = true;
-                        }
-                    }
+                // x1이 큰 쪽 선분이 x2가 더 작다면 겹치게 됩니다.
+                if((x1[i] <= x1[j] && x2[i] >= x2[j]) || (x1[i] >= x1[j] && x2[i] <= x2[j])) {
+                    overlap = true;
+                    break;
                 }
-
             }
+
+            // 겹치지 않았다면 정답의 개수에 하나를 추가합니다.
+            if(overlap == false)
+                ans++;
         }
 
-        for (int i = 0; i < N; i++) {
-            if (!arr[i].flags) {
-                cnt++;
-            }
-        }
-
-
-        sb.append(cnt);
-
-
-        bw.write(sb.toString());
-        bw.flush();
-        bw.close();
-
+        System.out.print(ans);
     }
 }
