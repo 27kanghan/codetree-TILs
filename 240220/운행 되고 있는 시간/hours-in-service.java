@@ -44,31 +44,32 @@ public class Main {
 
         for(int i = 0; i < N; i++){
 
-            for(int j = i+1; j< N; j++){
-                int time[] = new int[1001];
-                int cnt = 0;
-                int a1 = arr[i].x;
-                int b1 = arr[i].y;
+           int time[] = new int[1001];
+           int cnt = 0;
+
+            for(int j = 0; j< N; j++){
+
+                if(i == j ) continue;;
+
 
                 int a2 = arr[j].x;
                 int b2 = arr[j].y;
+//                System.out.println(a2 + " " + b2);
 
-                for(int k = a1; k < b1; k++){
-                    time[k] = 1;
-                }
+
                 for(int k = a2; k < b2; k++){
                     time[k] = 1;
                 }
 
-                for(int k = 0; k < 1001; k++){
-                    if(time[k] == 1){
-                        cnt++;
-                    }
-                }
-
-                max = Math.max(cnt, max);
 
             }
+            for(int k = 0; k < 1001; k++){
+                if(time[k] == 1){
+                    cnt++;
+                }
+            }
+
+            max = Math.max(cnt, max);
         }
 
         sb.append(max);
