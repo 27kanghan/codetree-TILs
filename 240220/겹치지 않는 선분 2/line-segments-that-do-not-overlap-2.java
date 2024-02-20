@@ -51,21 +51,19 @@ public class Main {
 
         }
 
-        Arrays.sort(arr);
+//        Arrays.sort(arr);
 
         int cnt = 0;
 
         for(int i = 0; i < N; i++){
 
-            for(int j = 0; j < N; j++){
-//                if(i == j)continue;;
-//                if(!arr[i].flags && !arr[i].flags) {
+            for(int j = i+1; j < N; j++){
+//                if(i==j) continue;
                     int x = arr[i].x;
                     int y = arr[i].y;
 
                     int a = arr[j].x;
                     int b = arr[j].y;
-
 
                     // a랑 b가 x,y안에 있거나 x랑 y가 a,b에 있다.
 
@@ -89,24 +87,15 @@ public class Main {
                                 arr[j].flags =true;
                             }
                         }else if(a < b){
-                            if(a > x && a < y && b < y && b > x){
+                            if(a < y){
                                 arr[i].flags =true;
                                 arr[j].flags =true;
                             }
                         }
                     }
 
-
-
-
-//                System.out.println(Ar?rays.toString(arr));
-
-
             }
         }
-
-//        || (x >= a && x <= b) || (x >= b && x <= a)
-//                || (y >= a && x <= b || (y >= b && x <= a)))
 
         for(int i = 0; i < N; i++){
             if(!arr[i].flags){
