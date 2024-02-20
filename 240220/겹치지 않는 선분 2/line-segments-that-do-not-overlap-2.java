@@ -57,8 +57,9 @@ public class Main {
 
         for(int i = 0; i < N; i++){
 
-            for(int j = i+1; j < N; j++){
-                if(!arr[i].flags && !arr[i].flags) {
+            for(int j = 0; j < N; j++){
+//                if(i == j)continue;;
+//                if(!arr[i].flags && !arr[i].flags) {
                     int x = arr[i].x;
                     int y = arr[i].y;
 
@@ -68,19 +69,37 @@ public class Main {
 
                     // a랑 b가 x,y안에 있거나 x랑 y가 a,b에 있다.
 
-                    if(a > x && a < y && b > x && b < y){
-                        arr[i].flags = true;
-                        arr[j].flags = true;
+
+                    if (x < y) {
+                        if(a < b){
+                            if(a > x && a < y && b < y && b > x){
+                                arr[i].flags =true;
+                                arr[j].flags =true;
+                            }
+                        }else if(a > b ){
+                            if(a < y){
+                                arr[i].flags =true;
+                                arr[j].flags =true;
+                            }
+                        }
+                    }else if(x > y){
+                        if(a > b){
+                            if(a < y){
+                                arr[i].flags =true;
+                                arr[j].flags =true;
+                            }
+                        }else if(a < b){
+                            if(a > x && a < y && b < y && b > x){
+                                arr[i].flags =true;
+                                arr[j].flags =true;
+                            }
+                        }
                     }
 
-                    if(x > a && y > a && b > x && b < y){
-                        arr[i].flags =true;
-                        arr[j].flags =true;
-                    }
 
-                }
 
-//                System.out.println(Arrays.toString(arr));
+
+//                System.out.println(Ar?rays.toString(arr));
 
 
             }
