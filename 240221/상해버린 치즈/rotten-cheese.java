@@ -84,35 +84,37 @@ public class Main {
                     //아픈 시간 1초 전에 먹은 치즈 상했을 확률 올리기
                     if(arr[j].time < time){
 //                        System.out.println(arr[j].toString());
-                        eatTime.add(new Point(number, arr[j].cheese, time));
+//                        eatTime.add(new Point(number, arr[j].cheese, time));
                         rotCheese[arr[j].cheese] = 1;
                     }
                 }
             }
         }
-        // for (int i = 0; i < eatTime.size(); i++){
-            // System.out.println(eatTime.get(i).toString());
-        // }
-
-        // System.out.println(Arrays.toString(rotCheese));
-
-        for(int i = 0; i < eatTime.size(); i++){
-            boolean flags = false;
-            for(int j = 0; j < eatTime.size(); j++){
-                if(eatTime.get(i).number != eatTime.get(j).number && eatTime.get(i).cheese == eatTime.get(j).cheese){
+//        for (int i = 0; i < eatTime.size(); i++){
+//            System.out.println(eatTime.get(i).toString());
+//        }
+//
+//        System.out.println(Arrays.toString(rotCheese));
+//
+//        for(int i = 0; i < eatTime.size(); i++){
+//            boolean flags = false;
+//            for(int j = 0; j < eatTime.size(); j++){
+//                if(eatTime.get(i).number != eatTime.get(j).number && eatTime.get(i).cheese == eatTime.get(j).cheese){
 //                    System.out.println(eatTime.get(i).number + " " + eatTime.get(i).cheese);
 //                    System.out.println(eatTime.get(j).number + " " + eatTime.get(j).cheese);
 //                    System.out.println(eatTime.get(i).cheese == eatTime.get(j).cheese);
-                    flags = true;
-                    break;
-                }
-            }
-            // System.out.println("done " + i + " " + flags);
-            if(!flags){
+//                    flags = true;
+//                    break;
+//                }
+//            }
+//            System.out.println("done " + i + " " + flags);
+//            if(!flags){
 //                System.out.println(rotCheese[eatTime.get(i).cheese]);
-                rotCheese[eatTime.get(i).cheese] = 0;
-            }
-        }
+//                rotCheese[eatTime.get(i).cheese] = 0;
+//            }
+//        }
+
+//        System.out.println(Arrays.toString(rotCheese));
 
 
 
