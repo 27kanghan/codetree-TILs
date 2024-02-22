@@ -41,14 +41,12 @@ public class Main {
                     }
                 }
 
-                check[idx] = false;
+//                System.out.println(idx);
+
+                check[num] = false;
                 check[0] = false;
 
                 for(int c = 0; c < N; c++){
-
-
-
-
                     if(arr[r][c] != num){
                         if(c < idx){
                             check[arr[r][c]] = false;
@@ -58,16 +56,15 @@ public class Main {
 
 
             }
+
 //            System.out.println(Arrays.toString(check));
 
 
             for(int k = 1; k < N+1; k++){
-                if(check[i]){
+                if(check[k]){
                     cnt++;
                 }
             }
-
-
         }
 
 
