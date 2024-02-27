@@ -36,20 +36,20 @@ public class Main {
             for(int j = 0; j < str.length(); j++){
                 cnt = 0;
                 for(int k = 0; k < str.length(); k++){
-                    if(str.charAt(j) != str.charAt(k)){
+                    if(str.charAt(j) == str.charAt(k)){
                         cnt++;
                     }
                 }
-//                System.out.println(cnt);
+//                System.out.println("cnt" + cnt);
                 if(cnt == str.length()-1){
                     resCnt++;
                 }
             }
-//            System.out.println(resCnt);
+//            System.out.println("rescnt" + resCnt);
 
 
-            if(resCnt < 2 && resCnt != 0){
-//                System.out.println(i);
+            if(resCnt == str.length()-1){
+                // System.out.println("res" + i);
                 res++;
             }
 
