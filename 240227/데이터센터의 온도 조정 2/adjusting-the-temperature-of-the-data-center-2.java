@@ -47,7 +47,7 @@ public class Main {
 
         }
 
-        for (int i = 0; i < 31; i++) {
+        for (int i = 0; i < 1001; i++) {
             int sum = 0;
             int value = 0;
             for (int j = 0; j < N; j++) {
