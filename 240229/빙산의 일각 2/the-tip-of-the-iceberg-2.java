@@ -19,51 +19,39 @@ public class Main {
         int arr[][] = new int[1001][1001];
         int maxHeight = 0;
 
-        for(int i = 0; i < N; i++){
+        for (int i = 0; i < N; i++) {
             int height = Integer.parseInt(br.readLine());
             maxHeight = Math.max(maxHeight, height);
 
-            for(int j = 0; j < height; j++){
+            for (int j = 0; j < height; j++) {
                 arr[i][j] = 1;
             }
         }
 
-        // for (int i = 0; i < N; i++) {
-            // System.out.println(Arrays.toString(arr[i]));
-        // }
+//        for(int i = 0; i < N; i++){
+//            System.out.println(Arrays.toString(arr[i]));
+//        }
 
 
         int maxCnt = 0;
-        for(int h = 0; h < maxHeight; h++){
+        for (int h = 0; h < maxHeight; h++) {
             int cnt = 0;
-// 
-            // System.out.println("height = " + h);
-            for(int i = 0; i < N; i++){
-                if(arr[i][h] == 1) {
-                    if(i == 0){
-                        if(arr[i+1][h] != 1){
-                            cnt++;
-                        }
-                        // System.out.println("i=0");
-                    }
-                    else if(i == N-1){
-                        if(arr[i-1][h] != 1){
-                            cnt++;
-                        }
-                        // System.out.println("i=n-1");
-                    }else{
-                        if(arr[i + 1][h] != 1) {
-                            cnt++;
-                        }
-                        // System.out.println("else");
-                    }
-                    // System.out.println("CNT= " + cnt);
+            boolean flags = false;
+            for (int i = 0; i < N; i++) {
+                if(arr[i][h] == 1 && !flags){
+                    flags = true;
+                    cnt++;
+                    continue;
                 }
 
-            }
+                if(arr[i][h] == 0){
+                    flags= false;
+                    continue;
+                }
 
-            if(cnt == 3){
-                // System.out.println("lucky");
+
+
+
             }
             maxCnt = Math.max(cnt, maxCnt);
         }
