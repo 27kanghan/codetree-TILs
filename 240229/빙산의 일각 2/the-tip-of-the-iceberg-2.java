@@ -16,43 +16,55 @@ public class Main {
 
         int N = Integer.parseInt(br.readLine());
 
-        int arr[][] = new int[N][N];
+        int arr[][] = new int[1001][1001];
+        int maxHeight = 0;
 
         for(int i = 0; i < N; i++){
             int height = Integer.parseInt(br.readLine());
+            maxHeight = Math.max(maxHeight, height);
 
             for(int j = 0; j < height; j++){
                 arr[i][j] = 1;
             }
         }
 
+        // for (int i = 0; i < N; i++) {
+            // System.out.println(Arrays.toString(arr[i]));
+        // }
+
 
         int maxCnt = 0;
-        for(int h = 0; h < N; h++){
+        for(int h = 0; h < maxHeight; h++){
             int cnt = 0;
-
+// 
             // System.out.println("height = " + h);
             for(int i = 0; i < N; i++){
-
-
                 if(arr[i][h] == 1) {
                     if(i == 0){
                         if(arr[i+1][h] != 1){
                             cnt++;
                         }
+                        // System.out.println("i=0");
                     }
                     else if(i == N-1){
                         if(arr[i-1][h] != 1){
                             cnt++;
                         }
-                    }else if(arr[i - 1][h] != 1 || arr[i + 1][h] != 1) {
-                        cnt++;
-                        // System.out.println(cnt);
+                        // System.out.println("i=n-1");
+                    }else{
+                        if(arr[i + 1][h] != 1) {
+                            cnt++;
+                        }
+                        // System.out.println("else");
                     }
+                    // System.out.println("CNT= " + cnt);
                 }
 
             }
 
+            if(cnt == 3){
+                // System.out.println("lucky");
+            }
             maxCnt = Math.max(cnt, maxCnt);
         }
 
