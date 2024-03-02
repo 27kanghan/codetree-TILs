@@ -44,50 +44,55 @@ public class Main {
         boolean res = false;
 
 
-        for(int i = 0; i <= max; i++){
-            for(int j = 0; j <= max; j++){
-                for(int k = 0; k <= max; k++){
+        for(int i = 0; i <= 10; i++){
+            for(int j = 0; j <= 10; j++){
+                for(int k = 0; k <= 10; k++){
 
                     boolean flags = false;
 
                     for(int n = 0; n < N; n++){
+                        // System.out.println(n);
                         int x = arr[n].x;
                         int y = arr[n].y;
+//                        System.out.println(x + " : " + y);
+//                        System.out.println(i + " : " + j + " :  " + k);
 
                         // x 3
-                        if(i == x || j == x || y == x){
+                        if(i == x || j == x || k == x){
+//                            System.out.println("1번");
                             flags = true;
-                            continue;
                         }
                         // x2 y1
                         else if((i == x || j == x || k == y) || (i == x || j == y || k == x) ||
                                 (i == y || j == x || k == x)){
+//                            System.out.println("2번");
                             flags = true;
-                            continue;
                         }
                         // x1 y2
 
                         else if((i == x || j == y || k == y) || (i == y || j == y || k == x) ||
                                 (i == y || j == x || k == y)){
+//                            System.out.println("3번");
                             flags = true;
-                            continue;
                         }
-
                         // y 3
-                        else if(i == y || j == y || y == y){
+                        else if(i == y || j == y || k == y){
+//                            System.out.println("4번");
                             flags = true;
-                            continue;
                         }else{
+//                            System.out.println("5번");
                             flags = false;
                             break;
                         }
 
                     }
+//                    System.out.println(flags);
 
                     if(flags){
-                        // System.out.println(i + " " + j + " " + k);
+//                        System.out.println("통과");
                         res = true;
                         val = 1;
+                        break;
                     }
                 }
                 if(res) break;
