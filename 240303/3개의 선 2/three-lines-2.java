@@ -97,7 +97,7 @@ public class Main {
                                     break;
                                 }
                             } else {
-                                if (i == y || j == y || y == x) flags = true;
+                                if (i == y || j == y || k == y) flags = true;
                                 else {
                                     flags = false;
                                     break;
