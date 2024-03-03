@@ -41,6 +41,8 @@ public class Main {
         // 최소 개수
         int min = Integer.MAX_VALUE;
 
+        int minMax = Integer.MAX_VALUE;
+
         //차이값 최소 저장
         int resMin = Integer.MAX_VALUE;
         int res = 0;
@@ -48,8 +50,8 @@ public class Main {
 
         //x, y좌표 정해주기
 
-        for(int i = 0; i < 20; i++){
-            for(int j = 0; j < 20; j++){
+        for(int i = 0; i < 101; i++){
+            for(int j = 0; j < 101; j++){
                 //좌표 정해질 때 마다 사분면 카운트 초기화
                 int cnt1 = 0;
                 int cnt2 = 0;
@@ -85,16 +87,21 @@ public class Main {
                     continue;
                 }
 
-//                System.out.println(cnt1 + " " + cnt2 + " " +cnt3 + " " + cnt4);
+                // System.out.println(cnt1 + " " + cnt2 + " " +cnt3 + " " + cnt4);
                 //한번 끝나면 그중 최대값과 최소값 찾기
 
                 max = Math.max(cnt1, Math.max(cnt2, Math.max(cnt3, cnt4)));
                 min = Math.min(cnt1, Math.min(cnt2, Math.min(cnt3, cnt4)));
 
-                int diff = max - min;
+                minMax = Math.min(max,minMax);
 
-                if(diff < resMin){
-//                    System.out.println("최소값 갱신");
+//                int diff = Math.abs(Math.abs(cnt1-cnt2) - Math.abs(cnt3-cnt4));
+                int diff = max - min;
+                // System.out.println("diff"+diff);
+
+
+                if(diff <= resMin && max <= minMax){
+                    // System.out.println("최소값 갱신");
                     resMin = diff;
                     res = max;
                 }
