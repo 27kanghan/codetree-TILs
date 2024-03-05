@@ -29,7 +29,7 @@ public class Main {
             }
         }
 
-        if(!flags) {
+        if (!flags) {
             for (int i = 0; i < N; i++) {
 
                 //사람 이미 있으면 쳐내
@@ -54,54 +54,24 @@ public class Main {
 //                    continue;
 //                }
 
-//            System.out.println(Arrays.toString(copy));
+//                System.out.println(Arrays.toString(copy));
 
+                int diff = 0;
 
-                int leftDiff = 0;
-                //왼쪽검사
-                for (int j = i; j >= 0; j--) {
-                    if (j - 1 < 0) break;
+                int minDiff = Integer.MAX_VALUE;
+                for (int j = 0; j < N-1; j++) {
 
-                    if (copy[j - 1] == 0) leftDiff++;
-
-                    else if (copy[j - 1] == 1) {
-                        leftDiff++;
-                        break;
+                    if (copy[j + 1] == 0) {
+                        diff++;
                     }
-                }
-
-//            System.out.println("left + " + leftDiff);
-
-                int rightDiff = 0;
-                //오른쪽검사
-                for (int j = i; j < N; j++) {
-
-                    if (j + 1 == N) break;
-
-                    if (copy[j + 1] == 0) rightDiff++;
-
-                    else if (copy[j + 1] == 1) {
-                        rightDiff++;
-                        break;
+                    if(copy[j+1] == 1){
+                        diff++;
+                        minDiff = Math.min(minDiff, diff);
+                        diff = 0;
                     }
 
                 }
 
-//            System.out.println("right + " + rightDiff);
-
-                //두개 중 차이 큰거 기록
-
-                int minDiff = 0;
-
-                if (leftDiff == 0) {
-                    minDiff = rightDiff;
-                } else if (rightDiff == 0) {
-                    minDiff = leftDiff;
-                } else {
-                    minDiff = Math.min(rightDiff, leftDiff);
-                }
-
-//            System.out.println("minDiff" + minDiff);
 
                 max = Math.max(minDiff, max);
 
