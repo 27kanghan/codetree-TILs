@@ -30,6 +30,8 @@ public class Main {
             }
         }
 
+        // System.out.println(flags);
+
         if (!flags) {
             for (int i = 0; i < N; i++) {
 
@@ -46,39 +48,39 @@ public class Main {
                 copy[i] = 1;
                 // System.out.println("i" + i);
 
-                if (i == 0 && copy[i + 1] == 1) {
-                    continue;
-                } else if (i == N - 1 && copy[i - 1] == 1) {
-                    continue;
-                }
+//                if (i == 0 && copy[i + 1] == 1) {
+//                    continue;
+//                } else if (i == N - 1 && copy[i - 1] == 1) {
+//                    continue;
+//                }
 //                else if (i > 0 && i < N - 1 && (copy[i - 1] == 1 || copy[i + 1] == 1)) {
 //                    continue;
 //                }
 
                 int minDiff = Integer.MAX_VALUE;
 
-                for(int j = 0; j < N-1; j++){
+                for (int j = 0; j < N - 1; j++) {
 
-                    if(copy[j] != 1) continue;
+                    if (copy[j] != 1) continue;
                     boolean flag = false;
                     int diff = 0;
-                    int min = Integer.MAX_VALUE;
+//                    int min = Integer.MAX_VALUE;
 
-                    for(int k = j; k < N-1; k++){
-                        if(copy[k+1] == 0){
+                    for (int k = j; k < N - 1; k++) {
+                        if (copy[k + 1] == 0) {
                             diff++;
-                        }else if(copy[k+1] == 1){
+                        } else if (copy[k + 1] == 1) {
                             diff++;
 //                            flag = true;
-                            minDiff = Math.min(diff,minDiff);
-//                            System.out.println("mindiff" + j + " " + minDiff);
-//                            System.out.println("diff" + j + " " + diff);
+                            minDiff = Math.min(diff, minDiff);
+                            // System.out.println("mindiff" + j + " " + minDiff);
+                            // System.out.println("diff" + j + " " + diff);
                             break;
                         }
                     }
 
 
-                    if(flag){
+                    if (flag) {
 
                     }
 
@@ -88,20 +90,22 @@ public class Main {
                 }
 
                 max = Math.max(minDiff, max);
-
 //                System.out.println(Arrays.toString(copy));
             }
+        }
+
 
             if (flags) {
                 sb.append(1);
             } else {
                 sb.append(max);
             }
+
             bw.write(sb.toString());
             bw.flush();
             bw.close();
 
-        }
+
 
 
     }
