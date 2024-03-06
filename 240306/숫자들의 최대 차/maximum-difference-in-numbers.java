@@ -17,9 +17,9 @@ public class Main {
         int N = Integer.parseInt(st.nextToken());
         int K = Integer.parseInt(st.nextToken());
 
-        int arr[] = new int[N];
+        int arr[] = new int[N+1];
 
-        for(int i = 0; i < N; i++){
+        for(int i = 1; i <= N; i++){
             st = new StringTokenizer(br.readLine());
 
             arr[i] = Integer.parseInt(st.nextToken());
@@ -32,12 +32,12 @@ public class Main {
 
         int res = Integer.MIN_VALUE;
 
-        // System.out.println(Arrays.toString(arr));
+//        System.out.println(Arrays.toString(arr));
 
-        for(int i = 0; i < N; i++){
+        for(int i = 0; i <= N; i++){
             min = Integer.MAX_VALUE;
             max = Integer.MIN_VALUE;
-            for(int j = i+1; j < N; j++){
+            for(int j = i+1; j <= N; j++){
                 for(int k = i; k < j; k++){
                     min = Math.min(min, arr[k]);
                     max = Math.max(max, arr[k]);
@@ -47,7 +47,9 @@ public class Main {
                 if(max - min <= K){
 //                    System.out.println("ij" + i + " : " + j );
 //                    System.out.println(min + " : " + max);
+//                    System.out.println("i-j" + (j-i));
                     res = Math.max(res, j-i);
+//                    System.out.println("res" + res);
                 }
             }
 
