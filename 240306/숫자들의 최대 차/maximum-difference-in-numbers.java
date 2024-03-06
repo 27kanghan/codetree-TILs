@@ -32,14 +32,21 @@ public class Main {
 
         int res = Integer.MIN_VALUE;
 
+        // System.out.println(Arrays.toString(arr));
+
         for(int i = 0; i < N; i++){
-            for(int j = 0; j < N; j++){
+            min = Integer.MAX_VALUE;
+            max = Integer.MIN_VALUE;
+            for(int j = i+1; j < N; j++){
                 for(int k = i; k < j; k++){
                     min = Math.min(min, arr[k]);
                     max = Math.max(max, arr[k]);
-                }
 
+//                    System.out.println(min + ": " + max);
+                }
                 if(max - min <= K){
+//                    System.out.println("ij" + i + " : " + j );
+//                    System.out.println(min + " : " + max);
                     res = Math.max(res, j-i);
                 }
             }
