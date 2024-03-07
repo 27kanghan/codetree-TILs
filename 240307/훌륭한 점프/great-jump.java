@@ -20,13 +20,15 @@ public class Main {
         int arr[] = new int[N];
 
         st = new StringTokenizer(br.readLine());
+        int maxValue = 0;
         for(int i = 0; i < N ; i++){
             arr[i] = Integer.parseInt(st.nextToken());
+            maxValue = Math.max(arr[i],maxValue);
         }
 
         int minMax = Integer.MAX_VALUE;
 
-        for(int i = Math.max(arr[0], arr[N-1]); i <= N+1; i++){
+        for(int i = Math.max(arr[0], arr[N-1]); i <= maxValue; i++){
             if(valid(N,K,i,arr)) {
                 minMax = Math.min(minMax, i);
             }
@@ -52,18 +54,18 @@ public class Main {
             }
         }
 
-//        System.out.println(Arrays.toString(available));
+        // System.out.println(Arrays.toString(available));
 
         for(int a = 1; a < cnt; a++){
             int distance = available[a] - available[a-1];
 
             if(distance > k){
-//                System.out.println(false);
+                // System.out.println(false);
                 return false;
             }
         }
 
-//        System.out.println(true);
+        // System.out.println(true);
         return true;
 
 
