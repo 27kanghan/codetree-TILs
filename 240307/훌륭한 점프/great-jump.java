@@ -26,7 +26,7 @@ public class Main {
 
         int minMax = Integer.MAX_VALUE;
 
-        for(int i = Math.max(arr[0], arr[N-1]); i <= N; i++){
+        for(int i = Math.max(arr[0], arr[N-1]); i <= N+1; i++){
             if(valid(N,K,i,arr)) {
                 minMax = Math.min(minMax, i);
             }
