@@ -10,33 +10,36 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
 
-        ArrayList<Integer> list = new ArrayList<>();
+
+        List<Integer> list = new ArrayList<>();
 
         int N = Integer.parseInt(br.readLine());
-        int num = 0;
+
         for(int i = 0; i < N; i++){
             st = new StringTokenizer(br.readLine());
-//|| !str.equals("pop_back")
-            String str = (st.nextToken());
-            if(str.equals("push_back") || str.equals("get") ) {
+
+            String str = st.nextToken();
+            int num = 0;
+            if(str.equals("push_back") || str.equals("get")){
                 num = Integer.parseInt(st.nextToken());
             }
-//            System.out.println(i);
 
-            int size = list.size();
-//            System.out.println("size" + size);
 
             if(str.equals("push_back")){
                 list.add(num);
             }else if(str.equals("pop_back")){
-                list.remove(list.get(size-1));
+                list.remove(list.size()-1);
             }else if(str.equals("size")){
-                sb.append(list.size());
-                sb.append("\n");
-            }else{
-                sb.append(list.get(num-1));
-                sb.append("\n");
+                System.out.println(list.size());
+            }else if(str.equals("get")){
+                System.out.println(list.get(num-1));
             }
+
+//            for(int j = 0; j < list.size(); j++){
+//                System.out.printf(list.get(j) + " ");
+//            }
+//
+//            System.out.println("size" + list.size());
 
         }
 
