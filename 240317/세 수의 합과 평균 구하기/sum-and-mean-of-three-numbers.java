@@ -9,11 +9,12 @@ public class Main {
          double c = sc.nextDouble();
 
         int d = (int) (a+b+c);
-        double e = (a+b+c)/3;
+        int e = (int)((a+b+c)/3);
 
 
         System.out.println(d);
-        System.out.printf("%.0f", e);
+        System.out.println(e);
+        
 
     }
 }
