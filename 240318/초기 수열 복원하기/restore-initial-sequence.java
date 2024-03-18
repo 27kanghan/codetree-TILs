@@ -23,7 +23,7 @@ public class Main {
         boolean isVisited[];
         int res[];
 
-        for(int i = 1; i < arr[0]; i++){
+        for(int i = 1; i <= N; i++){
 
             isVisited = new boolean[N+1];
 
@@ -34,7 +34,9 @@ public class Main {
             res[0] = num;
             res[1] = i;
 
+            if(num > N || num < 1) continue;
             isVisited[num] = true;
+
 
             if(isVisited[i]) continue;
             isVisited[i] = true;
