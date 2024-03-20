@@ -38,7 +38,7 @@ public class Main {
 
 
         if(flags) sb.append("intersecting");
-        else sb.append("nointersecting");
+        else sb.append("nonintersecting");
 
         bw.write(sb.toString());
         bw.flush();
