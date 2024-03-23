@@ -17,7 +17,7 @@ public class Main {
         if(N == 1){
             sb.append("John");
         }else if(N == 2){
-            sb.append("Tome");
+            sb.append("Tom");
         }else if(N == 3){
             sb.append("Paul");
         }else{
