@@ -14,7 +14,7 @@ public class Main {
        
         double N = Double.parseDouble(br.readLine());
         
-        if(N > 1){
+        if(N >= 1){
             sb.append("High");
         }else if(N >= 0.5){
             sb.append("Middle");
