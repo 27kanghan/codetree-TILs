@@ -16,19 +16,20 @@ public class Main {
        int a = Integer.parseInt(st.nextToken());
        int b = Integer.parseInt(st.nextToken());
 
-        if( a < b){
+        if(a < b){
             sb.append(1);
             sb.append(" ");
-            sb.append(0);
-        }else if( b == a ){
-            sb.append(0);
-            sb.append(" ");
-            sb.append(0);
-        }else if( b > a){
+        }else{
             sb.append(0);
             sb.append(" ");
+        }
+        
+        if(a == b){
+            sb.append(1);
+            sb.append(" ");
+        }else{
             sb.append(0);
-
+            sb.append(" ");
         }
 
         bw.write(sb.toString());
