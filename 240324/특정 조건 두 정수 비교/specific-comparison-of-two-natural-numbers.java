@@ -23,7 +23,12 @@ public class Main {
         }else if( b == a ){
             sb.append(0);
             sb.append(" ");
-            sb.append(1);
+            sb.append(0);
+        }else if( b > a){
+            sb.append(0);
+            sb.append(" ");
+            sb.append(0);
+
         }
 
         bw.write(sb.toString());
