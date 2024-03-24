@@ -20,7 +20,7 @@ public class Main {
             sb.append(1);
             sb.append(" ");
             sb.append(0);
-        }else if( b < a ){
+        }else if( b == a ){
             sb.append(0);
             sb.append(" ");
             sb.append(1);
