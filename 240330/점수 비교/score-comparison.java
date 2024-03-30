@@ -20,7 +20,7 @@ public class Main {
         int d = Integer.parseInt(st.nextToken());
 
 
-        if(a > b && c > d){
+        if(a > c && b > d){
             sb.append(1);
         }else{
             sb.append(0);
