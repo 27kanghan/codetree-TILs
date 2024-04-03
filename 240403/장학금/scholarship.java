@@ -22,6 +22,8 @@ public class Main {
                 sb.append(100000);
             }else if(b >= 90){
                 sb.append(50000);
+            }else{
+                sb.append(0);
             }
         }else{
             sb.append(0);
