@@ -31,10 +31,11 @@ public class Main {
 
 
                 cost = getCost(arr,i,j);
+                max = Math.max(cost, max);
 
             }
 
-            max = Math.max(cost, max);
+
         }
 
 
@@ -49,13 +50,18 @@ public class Main {
 
     private static int getCost(int[][] arr, int i, int j) {
         int cost = 0;
+//        int max = Integer.MIN_VALUE;
 
+//        System.out.println(i + " " + j);
         for(int n = i; n < i+3; n++){
             for(int m = j; m < j+3; m++){
                 if(arr[n][m] == 1){
                     cost++;
                 }
             }
+//            System.out.println("cost" + cost);
+//            max = Math.max(cost, max);
+//            System.out.println("max" + max);
         }
 
         return cost;
