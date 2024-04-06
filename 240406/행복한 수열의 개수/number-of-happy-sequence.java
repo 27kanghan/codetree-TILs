@@ -57,7 +57,7 @@ public class Main {
             }
         }
 //        System.out.println(res);
-//
+
 //        System.out.println("세로");
         //세로
         for(int i = 0; i < N; i++){
@@ -73,7 +73,7 @@ public class Main {
                     cnt = 1;
                 }
 
-                if(cnt == M){
+                if(cnt >= M){
 //                    System.out.println("일치");
                     res++;
                     break;
@@ -81,6 +81,10 @@ public class Main {
 //                System.out.println(cnt);
 
             }
+        }
+
+        if(N == 1){
+            res = 2;
         }
 
 
