@@ -38,7 +38,7 @@ public class Main {
             sb.append(dq.pollFirst());
             sb.append(" ");
 
-            if(i % 3 == 0){
+            if(i % N == 0){
                 sb.append("\n");
             }
         }
