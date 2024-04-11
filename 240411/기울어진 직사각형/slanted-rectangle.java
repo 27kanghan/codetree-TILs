@@ -30,11 +30,15 @@ public class Main {
         int max = Integer.MIN_VALUE;
         for (int i = 0; i < N; i++) {
             for (int j = 0; j < N; j++) {
+                for (int k = 1; k < N; k++) {
+                    for (int l = 1; l < N; l++) {
 
 //
 //                System.out.println("start");
 //                System.out.println(i + " " + j);
-                max = Math.max(max, getValue(N, arr ,i, j));
+                        max = Math.max(max, getValue(N, arr, i, j, k,l));
+                    }
+                }
 
             }
         }
@@ -47,11 +51,13 @@ public class Main {
         bw.close();
     }
 
-    private static int getValue(int n, int[][] arr, int startr, int startc) {
+    private static int getValue(int n, int[][] arr, int startr, int startc, int k, int l) {
         int r = startr;
         int c = startc;
         int d = 0;
         int sum = 0;
+        int height = 0;
+        int weight = 0;
 
         sum += arr[r][c];
 
@@ -59,22 +65,24 @@ public class Main {
 
         while (true) {
 
-            if(d >= 4){
+            if (d >= 4) {
                 break;
             }
 
             int nr = r + dr[d];
             int nc = c + dc[d];
 
-            if(!inRange(nr,nc,n) || isCorner(nr,nc,n) || isVisited[nr][nc]){
+            if (!inRange(nr, nc, n) || (height == k) || (weight == l) || isCorner(nr,nc,n)) {
                 d++;
+                if(height == k) height = 0;
+                if(weight == l) weight = 0;
                 continue;
             }
 
 //            System.out.println("nrnc");
 //            System.out.println(nr + " " + nc+ "d" + d);
 
-            if(d == 3 && nr == startr && nc == startc){
+            if (d == 3 && nr == startr && nc == startc) {
 //                System.out.println("sum");
 //                System.out.println(sum);
                 return sum;
@@ -85,6 +93,8 @@ public class Main {
 
             r = nr;
             c = nc;
+            if(d == 0 || d == 2) height++;
+            else weight++;
 
         }
 
@@ -94,7 +104,7 @@ public class Main {
     }
 
     private static boolean isCorner(int nr, int nc, int n) {
-        return (nr == 0 && nc == 0) || (nr == 0 && nc == n-1) || (nr == n-1 && nc == 0) || (nr == n-1 && nc == n-1);
+        return (nr == 0 && nc == 0) || (nr == 0 && nc == n - 1) || (nr == n - 1 && nc == 0) || (nr == n - 1 && nc == n - 1);
     }
 
     private static boolean inRange(int nr, int nc, int n) {
