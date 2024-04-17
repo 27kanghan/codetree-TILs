@@ -52,7 +52,7 @@ public class Main {
 
     static int getSize(int x1, int y1, int x2, int y2) {
 
-        int size = 0;
+        int size = -1;
 
         if (isPositive(x1, y1, x2, y2)) {
             for(int i = y1; i <= y2; i++){
