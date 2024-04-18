@@ -116,6 +116,7 @@ public class Main {
 
 
     private static void validDown(int row1, char dir) {
+//        System.out.println("startDown");
         boolean isDuplicate = false;
         char newDir = dir;
         int row = row1;
@@ -149,6 +150,7 @@ public class Main {
 
             if (newDir == 'L') {
                 int temp = arr[row-1][M - 1];
+//                System.out.println("temp" + temp);
 
                 for (int i = 1; i < M; i++) {
                     forMove[i] = arr[row-1][i - 1];
@@ -160,7 +162,8 @@ public class Main {
                 }
 
             } else {
-                int temp = arr[row][0];
+                int temp = arr[row -1 ][0];
+
 
                 for (int i = 1; i < M; i++) {
                     forMove[i - 1] = arr[row-1][i];
@@ -185,6 +188,7 @@ public class Main {
     }
 
     private static void validUp(int row1, char dir) {
+//        System.out.println("Startup");
         boolean isDuplicate = false;
         char newDir = dir;
         int row = row1;
@@ -234,9 +238,11 @@ public class Main {
                 }
             }
 
-            row = row + 1;
+
 
 //            System.out.println(row + " " + newDir);
+
+            row = row + 1;
 //
 //            print(arr);
 
