@@ -52,13 +52,11 @@ public class Main {
         int row = 0;
 
         for (int r = 0; r < N; r++) {
-//            System.out.println("1");
-            if(r+1 >= N) {
-                isPossible = false;
+            if (r == N - 1) {
+                row = N - 1;
                 break;
             }
             for (int c = K - 1; c < K + (M - 1); c++) {
-//                System.out.println("2");
                 if (arr[r + 1][c] == 1) {
                     isPossible = false;
                     row = r;
