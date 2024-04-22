@@ -53,6 +53,10 @@ public class Main {
 
         for (int r = 0; r < N; r++) {
 //            System.out.println("1");
+            if(r+1 >= N) {
+                isPossible = false;
+                break;
+            }
             for (int c = K - 1; c < K + (M - 1); c++) {
 //                System.out.println("2");
                 if (arr[r + 1][c] == 1) {
