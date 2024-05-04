@@ -19,7 +19,7 @@ public class Main {
 
             cnt++;
 
-            if(a >= 30){
+            if(a >= 30 || a < 20){
                 sum -= a;
                 cnt--;
 
