@@ -23,7 +23,7 @@ public class Main {
 
         avg = sum / 8;
 
-        System.out.println(avg);
+        System.out.printf("%.1f",avg);
 
 //        if(avg >= 4.0){
 //            System.out.println("Perfect");
