@@ -7,7 +7,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
 //
 
-        int arr[] = new int[10];
+        int arr[] = new int[100];
 
         int sum = 0;
         int idx = 0;
