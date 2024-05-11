@@ -42,11 +42,19 @@ public class Main {
         visited[0][0] = true;
         dfs(0,0);
 
+//        for(int i = 0; i < N; i++){
+//            for(int j = 0; j < M; j++){
+//                System.out.print(ans[i][j] + " ");
+//            }
+//            System.out.println();
+//        }
+
         if(ans[N-1][M-1] != 0){
             System.out.println(1);
         }else{
             System.out.println(0);
         }
+
 
 
     }
@@ -55,9 +63,10 @@ public class Main {
         int dx[] = new int[]{1,0};
         int dy[] = new int[]{0,1};
 
-        for(int d = 0; d <2; d++){
+        for(int d = 0; d < 2; d++){
             int nx = x + dx[d];
             int ny = y + dy[d];
+
             if(canGo(nx,ny)){
                 ans[nx][ny] = order++;
                 visited[nx][ny] = true;
@@ -67,7 +76,12 @@ public class Main {
     }
 
     private static boolean canGo(int nx, int ny) {
-        if(!inRange(nx,ny)) return false;
+        // System.out.println(nx + " " +ny);
+
+
+        if(!inRange(nx,ny)) {
+            return false;
+        }
         if(visited[nx][ny] == true || arr[nx][ny] == 0){
             return false;
         }
@@ -75,7 +89,7 @@ public class Main {
     }
 
     private static boolean inRange(int nx, int ny) {
-        return nx >= 0 &&  nx < N && ny >= 0 && ny < N;
+        return nx >= 0 &&  nx < N && ny >= 0 && ny < M;
     }
 
 
