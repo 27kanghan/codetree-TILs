@@ -60,7 +60,7 @@ public class Main {
 
 //            System.out.println("size" + area.size());
 
-            if(maxArea <= area.size()){
+            if(maxArea < area.size()){
                 maxArea = area.size();
                 resultK = k;
             }
