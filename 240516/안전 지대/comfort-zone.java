@@ -43,7 +43,7 @@ public class Main {
             }
         }
 
-        for (int k = 0; k < maxValue; k++) {
+        for (int k = 1; k <= maxValue; k++) {
             visited = new boolean[N][M];
             arr = new int[N][M];
             area.clear();
@@ -65,7 +65,7 @@ public class Main {
                 resultK = k;
             }
 
-//            System.out.println("K" + k);
+            // System.out.println("K" + k);
 //            for (int i = 0; i < N; i++) {
 //                for (int j = 0; j < M; j++) {
 //                    System.out.print(arr[i][j] + " ");
