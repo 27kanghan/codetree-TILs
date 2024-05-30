@@ -12,6 +12,8 @@ public class Main {
           int a = sc.nextInt();
           
           max = Math.max(max,a);
+      
+      
       }
 
         System.out.println(max);
