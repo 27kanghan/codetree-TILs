@@ -108,8 +108,8 @@ public class Main {
 
         visited[r][c] = true;
 
-
         while (!q.isEmpty()) {
+//            System.out.println("123");
             Point cur = q.poll();
 
             for (int d = 0; d < 4; d++) {
@@ -123,15 +123,17 @@ public class Main {
                 }
             }
 
-
         }
 
         Collections.sort(list);
 
-//        for (int i = 0; i < list.size(); i++) {
-//            System.out.println(list.get(i).toString());
-//        }
+        // for (int i = 0; i < list.size(); i++) {
+        //     System.out.println(list.get(i).toString());
+        // }
 
+        if(list.size() == 0){
+            return;
+        }
         nextR = list.get(0).r;
         nextC = list.get(0).c;
 //        System.out.println(nextR + " " + nextC + " " + map[nextR][nextC] + " 124");
