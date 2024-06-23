@@ -50,6 +50,7 @@ public class Main {
     static int map[][];
     static boolean visited[][];
 
+//
     static int dr[] = {0, 0, -1, 1};
     static int dc[] = {1, -1, 0, 0};
 
