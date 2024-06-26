@@ -22,6 +22,7 @@ public class Main {
                 min = Math.min(Math.abs(arr[i]-arr[j]), min);
             }
         }
+        //
 
         System.out.println(min);
 
