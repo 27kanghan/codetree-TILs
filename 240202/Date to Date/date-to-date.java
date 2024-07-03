@@ -15,6 +15,7 @@ public class Main {
 
         int dayOfMonth[] = {31,28,31,30,31,30,31,31,30,31,30,31};
 
+        //
         int m1 = Integer.parseInt(st.nextToken());
         int d1 = Integer.parseInt(st.nextToken());
         int m2 = Integer.parseInt(st.nextToken());
