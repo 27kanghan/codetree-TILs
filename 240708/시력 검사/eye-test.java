@@ -11,6 +11,8 @@ public class Main {
 
         double r = sc.nextDouble();
         double l = sc.nextDouble();
+
+        //
         
         if(r >= 1.0 && l >= 1.0){
             System.out.println("High");
