@@ -13,6 +13,7 @@ public class Main {
         sb.append(a);
         sb.append("\n");
 
+        //
         if(a < 0) {
             sb.append("minus");
 
