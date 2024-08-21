@@ -16,6 +16,7 @@ public class Main {
         // 1. while문 vs 2중for문
         // 2. 1번째 원소부터 시작해서 다음게 자기랑 작은거(최소값) 찾아서 작으면 바꿈.
         // 2중 for문이면 충분하다.
+        //
 
         int N = Integer.parseInt(br.readLine());
 
