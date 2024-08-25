@@ -14,6 +14,7 @@ public class Main {
 
     }
 
+    //
     private static int isPrime(int a, int b) {
         int sum = 0;
 
