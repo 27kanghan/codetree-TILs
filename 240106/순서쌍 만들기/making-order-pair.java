@@ -11,7 +11,7 @@ public class Main {
 
         int n = Integer.parseInt(st.nextToken());
 
-        //
+        
         for(int i = n; i > 0; i--){
             for(int j = n; j > 0; j--){
                 sb.append("(");
