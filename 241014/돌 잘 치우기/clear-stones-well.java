@@ -70,12 +70,13 @@ public class Main {
             st = new StringTokenizer(br.readLine());
             int sr = Integer.parseInt(st.nextToken());
             int sc = Integer.parseInt(st.nextToken());
-            start.add(new Point(sr-1, sc-1));
+            start.add(new Point(sr - 1, sc - 1));
         }
 
         isVisited = new boolean[list.size()];
 
         permutation(0);
+
 
         sb.append(max);
 
@@ -88,6 +89,7 @@ public class Main {
     public static void permutation(int cnt) {
 
         if (cnt == M) {
+            visited = new boolean[N][N];
 
             int copy[][] = new int[N][N];
 
@@ -96,16 +98,14 @@ public class Main {
                     copy[i][j] = map[i][j];
                 }
             }
-
             for (int i = 0; i < result.size(); i++) {
                 copy[result.get(i).r][result.get(i).c] = 0;
             }
-
             for (int i = 0; i < K; i++) {
-                visited = new boolean[N][N];
                 bfs(i, copy);
-                calculate();
             }
+            calculate();
+
             return;
         }
 
@@ -137,12 +137,12 @@ public class Main {
         while (!q.isEmpty()) {
             Point p = q.poll();
 
-            for(int d = 0; d < 4; d++){
+            for (int d = 0; d < 4; d++) {
                 int nr = p.r + dr[d];
                 int nc = p.c + dc[d];
 
-                if(valid(nr,nc,copy)){
-                    q.add(new Point(nr,nc));
+                if (valid(nr, nc, copy)) {
+                    q.add(new Point(nr, nc));
                     visited[nr][nc] = true;
                 }
             }
@@ -153,30 +153,46 @@ public class Main {
 
     }
 
-    public static boolean valid(int nr, int nc, int[][] copy){
+    public static boolean valid(int nr, int nc, int[][] copy) {
 
-        if(!inRange(nr,nc)) return false;
-        if(copy[nr][nc] == 1 || visited[nr][nc]) return false;
+        if (!inRange(nr, nc)) return false;
+        if (copy[nr][nc] == 1 || visited[nr][nc]) return false;
 
         return true;
 
     }
 
-    public static boolean inRange(int nr, int nc){
+    public static boolean inRange(int nr, int nc) {
         return nr >= 0 && nr < N && nc >= 0 && nc < N;
     }
-    public static void calculate(){
+
+    public static void calculate() {
 
         int cnt = 0;
 
-        for(int i = 0; i < N; i++){
-            for(int j = 0; j < N; j++){
-                if(visited[i][j]){
+        /*4 6 1
+0 1 0 0
+0 1 0 0
+1 0 1 1
+1 1 0 0
+2 4
+2 1
+1 1
+2 3
+4 4
+3 2
+*/
+
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < N; j++) {
+                if (visited[i][j]) {
                     cnt++;
                 }
             }
         }
-
+//        for (int i = 0; i < N; i++) {
+//                System.out.println(Arrays.toString(visited[i]));
+//        }
         max = Math.max(cnt, max);
     }
 }
