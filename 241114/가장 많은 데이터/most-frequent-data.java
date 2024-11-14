@@ -23,13 +23,16 @@ public class Main {
         for(int i = 0; i < N; i++){
             String word = br.readLine();
 
+
             if(!hs.containsKey(word)){
                 hs.put(word, 1);
+                max = Math.max(hs.get(word), max);
                 continue;
             }
 
 
             hs.put(word, hs.get(word)+1);
+            // System.out.println(hs.get(word));
 
             max = Math.max(hs.get(word), max);
         }
