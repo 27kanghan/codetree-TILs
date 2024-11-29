@@ -8,8 +8,6 @@ public class Main {
         StringTokenizer st;
         StringBuilder sb = new StringBuilder();
 
-
-        //
         int arr[][] = new int[4][4];
 
         for (int i = 0; i < 4; i++) {
