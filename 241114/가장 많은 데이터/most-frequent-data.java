@@ -11,7 +11,6 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         StringBuilder sb = new StringBuilder();
-
 //        StringTokenizer st = new StringTokenizer(br.readLine());
 
         HashMap<String,Integer> hs = new HashMap<>();
