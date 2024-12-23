@@ -8,7 +8,6 @@ public class Main {
 //        StringTokenizer st = new StringTokenizer(br.readLine());
         StringBuilder sb = new StringBuilder();
 
-
         double a = 5.26;
         double b = 8.27;
 
