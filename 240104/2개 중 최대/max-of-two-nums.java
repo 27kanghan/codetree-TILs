@@ -14,8 +14,6 @@ public class Main {
         int res = num1 > num2 ? num1 : num2;
 
         sb.append(res);
-        //
-
 
         bw.write(sb.toString());
         bw.flush();
