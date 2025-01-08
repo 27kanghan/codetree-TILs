@@ -12,8 +12,6 @@ public class Main {
 
         int n = Integer.parseInt(st.nextToken());
 
-
-
         int arr[][] = new int[n][n];
 
 
