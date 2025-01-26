@@ -9,7 +9,6 @@ import java.util.Scanner;
 
             int sum = pow(a, b);
 
-
             System.out.println(sum);
 
         }
