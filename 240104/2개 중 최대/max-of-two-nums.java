@@ -11,6 +11,7 @@ public class Main {
         int num1 = Integer.parseInt(st.nextToken());
         int num2 = Integer.parseInt(st.nextToken());
 
+        
         int res = num1 > num2 ? num1 : num2;
 
         sb.append(res);
