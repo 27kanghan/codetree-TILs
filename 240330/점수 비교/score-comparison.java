@@ -8,7 +8,6 @@ public class Main {
     static StringTokenizer st;
     static StringBuilder sb = new StringBuilder();
 
-
     public static void main(String[] args) throws IOException {
         
         
