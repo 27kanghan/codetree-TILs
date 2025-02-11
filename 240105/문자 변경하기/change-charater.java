@@ -8,7 +8,6 @@ public class Main {
 //        StringTokenizer st = new StringTokenizer(br.readLine());
         StringBuilder sb = new StringBuilder();
 
-
         String a = "c";
         a = "T";
 
