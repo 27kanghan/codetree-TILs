@@ -11,7 +11,7 @@ for en in arr :
 
 sum_val = 0;
 
-for i in range (0, cnt+1) :
+for i in range (0, cnt) :
     sum_val += arr[i];
 
 
