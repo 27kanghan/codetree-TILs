@@ -6,7 +6,7 @@ sum_val = 0;
 
 li = list();
 
-for i in range (n-1) :
+for i in range (n) :
     num = int(arr[i]);
     if num >= 250 :
         break;
