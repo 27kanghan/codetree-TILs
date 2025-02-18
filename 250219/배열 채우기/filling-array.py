@@ -1,10 +1,10 @@
 arr = list(map(int, input().split()));
+cnt = 0;
 
-li = list();
-for i in range (len(arr)-1,-1 , -1) :
-    if(arr[i] == 0 ) :
-        continue;
-    li.append(arr[i]);
+for i in arr:
+    if i == 0:
+        break;
+    cnt += 1;
 
-for i in range (len(li)) :
-    print(li[i], end= ' ');
+for i in range(cnt-1, -1, -1) :
+    print(arr[i], end= " ");
