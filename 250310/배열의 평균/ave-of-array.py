@@ -13,18 +13,18 @@ for i in range(2) :
     for j in range(4) :
         sum_val += arr[i][j];
        
-    print(sum_val / 4, end = ' ');
+    print(f"{sum_val / 4:.1f}", end=' ');
 print();
 
 for i in range(4) :
     sum_val = 0;
     for j in range(2) :
         sum_val += arr[j][i];
-    print(sum_val / 2, end = ' ');
+    print(f"{sum_val / 2:.1f}", end =' ');
 
 for i in range (2) :
     for j in range (4) :
         total_val += arr[i][j];
 
 print();
-print(total_val / 8);
+print(f"{total_val / 8:.1f}");
