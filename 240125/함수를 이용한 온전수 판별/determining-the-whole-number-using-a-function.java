@@ -7,7 +7,6 @@ public class Main {
     static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
     static StringTokenizer st;
     static StringBuilder sb = new StringBuilder();
-
     public static void main(String[] args) throws IOException {
 
         st = new StringTokenizer(br.readLine());
