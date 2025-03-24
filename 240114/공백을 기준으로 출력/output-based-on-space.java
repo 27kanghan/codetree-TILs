@@ -7,8 +7,7 @@ public class Main {
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 //        StringTokenizer st;
         StringBuilder sb = new StringBuilder();
-
-
+        
         String str = "";
 
 
