@@ -11,6 +11,7 @@ public class Main {
         int num1 = Integer.parseInt(st.nextToken());
         int num2 = Integer.parseInt(st.nextToken());
 
+        
         if(num1 >= num2){
             sb.append(num1 * num2);
         }else{
