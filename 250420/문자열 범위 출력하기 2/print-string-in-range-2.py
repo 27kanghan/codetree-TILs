@@ -1,5 +1,11 @@
 string = input();
 num = int(input());
 
-for i in range(len(string)-1, len(string)-num-1, -1) :
+end = len(string)-num-1;
+
+if end <= -1 :
+    end = -1;
+
+
+for i in range(len(string)-1, end, -1) :
     print(string[i], end='');
