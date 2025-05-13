@@ -10,7 +10,6 @@ public class Main {
 
         double a = 5.26;
         double b = 8.27;
-
         double ab = a*b;
 
 
