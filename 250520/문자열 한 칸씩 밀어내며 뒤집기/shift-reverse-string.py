@@ -19,7 +19,12 @@ for i in range(0, q) :
 
     # 3이면 좌우 반전.
     elif num == 3 :
-        print("NAN")
+        arr = list(input_str);
+
+        for j in range(0, leng) :
+            arr[j] = input_str[leng-j-1];
+
+        input_str = ''.join(arr); 
 
     print(input_str);
 
