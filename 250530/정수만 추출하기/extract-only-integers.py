@@ -9,7 +9,7 @@ for i in range(0, len(num1)):
     else :
         break;
 
-for i in range(0, len(num1)):
+for i in range(0, len(num2)):
     if num2[i].isdigit() :
         str2 += num2[i]
     else :
