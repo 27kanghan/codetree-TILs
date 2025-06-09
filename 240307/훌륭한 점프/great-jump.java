@@ -19,6 +19,7 @@ public class Main {
 
         int arr[] = new int[N];
 
+        //
         st = new StringTokenizer(br.readLine());
         int maxValue = 0;
         for(int i = 0; i < N ; i++){
