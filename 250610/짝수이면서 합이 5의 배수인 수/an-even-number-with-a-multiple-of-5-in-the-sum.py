@@ -4,8 +4,7 @@ n = int(input())
 
 # 짝수이면서 합이 5의 배수여야함
 def valid(n) :
-
-    return (n / 10 + n % 10 ) % 5
+    return n % 2 == 0 and (n / 10 + n % 10 ) % 5 
 
 
 flag = valid(n);
