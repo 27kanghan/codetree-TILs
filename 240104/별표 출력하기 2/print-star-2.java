@@ -9,6 +9,7 @@ public class Main {
         StringBuilder sb = new StringBuilder();
 
         int n = Integer.parseInt(st.nextToken());
+
         
         for(int i = 0; i < n; i++){
             for(int j = n-i; j > 0; j--){
