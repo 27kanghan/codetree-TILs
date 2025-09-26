@@ -11,31 +11,19 @@ days_of_month = [0,31,28,31,30,31,30,31,31,30,31,30,31]
 
 def get_days(m1, d1, m2, d2) :
 
-    days = 0;
-
-    start_m = 0;
-    start_d = 0;
-    end_m = 0;
-    end_d = 0;
-
-    if m1 >= m2 :
-        start_m = m2;
-        start_d = d2;
-        end_m = m1;
-        end_d = d1
-    else :
-        start_m = m1;
-        start_d = d1;
-        end_m = m2;
-        end_d = d2;
+    days1 = 0;
+    days2 = 0;
+    for i in range (1, m1+1) :
+        days1 += days_of_month[i]
     
-    for i in range (start_m, end_m) :
-        days += days_of_month[i]
-        # print(days)
+    days1 += d1
 
-    # print(days)
+    for i in range(1, m2+1) :
+        days2 += days_of_month[i]
 
-    return abs(days - start_d + end_d)
+    days2 += d2;
+
+    return days2 - days1
 
 
 total_days = get_days(m1,d1,m2,d2)
@@ -44,7 +32,7 @@ total_days = get_days(m1,d1,m2,d2)
 
 answer = ''
 
-if m1 <= m2 :
+if total_days >= 0 :
     num = total_days % 7
 else :
     num = abs(total_days) % 7
