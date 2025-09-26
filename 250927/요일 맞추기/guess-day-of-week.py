@@ -13,12 +13,15 @@ def get_days(m1, d1, m2, d2) :
 
     days1 = 0;
     days2 = 0;
-    for i in range (1, m1+1) :
+
+    if m1 == m2 : return d2 - d1
+
+    for i in range (1, m1) :
         days1 += days_of_month[i]
     
     days1 += d1
 
-    for i in range(1, m2+1) :
+    for i in range(1, m2) :
         days2 += days_of_month[i]
 
     days2 += d2;
