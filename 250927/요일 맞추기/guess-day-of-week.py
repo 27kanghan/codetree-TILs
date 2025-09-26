@@ -35,7 +35,7 @@ def get_days(m1, d1, m2, d2) :
 
     # print(days)
 
-    return days - start_d + end_d
+    return abs(days - start_d + end_d)
 
 
 total_days = get_days(m1,d1,m2,d2)
