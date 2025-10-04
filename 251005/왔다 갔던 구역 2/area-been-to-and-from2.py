@@ -13,7 +13,7 @@ for i in range (N) :
             arr[j] += 1
         cur_x += start
     else :
-        for j in range (cur_x, cur_x-start, -1) :
+        for j in range (cur_x-start, cur_x) :
             arr[j] += 1
         cur_x -= start
     # print(cur_x-1001)
