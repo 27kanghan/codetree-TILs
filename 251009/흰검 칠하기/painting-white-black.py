@@ -1,10 +1,12 @@
 n = int(input());
 
-arr = [0] * 10000
-arr_w = [0] * 10000
-arr_b = [0] * 10000
+max_k = 100000
 
-cur_x = 5000;
+arr = [0] * (max_k * 2 + 1)
+arr_w = [0] * (max_k * 2 + 1)
+arr_b = [0] * (max_k * 2 + 1)
+
+cur_x = max_k
 w = 0;
 b = 0;
 g = 0;
