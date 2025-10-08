@@ -21,8 +21,7 @@ for i in range(n) :
     else :
         for j in range (cur_x, cur_x - x, -1) :
             arr[j] = 2;
-        cur_x = cur_x - x- 1;
- 
+        cur_x = cur_x - (x - 1);
 
 
 for i in range(0, len(arr)) :
