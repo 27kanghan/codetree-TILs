@@ -5,9 +5,9 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         // Please write your code here.
 
-        int offset = 2000;
+        int offset = 1000;
 
-        int arr [][] = new int[offset][offset];
+        int arr [][] = new int[offset*2][offset*2];
 
         for(int i = 0; i < 3; i++){
             int x1 = sc.nextInt() + offset;
@@ -33,8 +33,8 @@ public class Main {
 
         int answer = 0;
 
-        for(int i = 0; i < offset; i++){
-            for(int j = 0; j < offset; j++){
+        for(int i = 0; i < offset*2; i++){
+            for(int j = 0; j < offset*2; j++){
                 if(arr[i][j] == 1) answer +=1;
             }
         }
