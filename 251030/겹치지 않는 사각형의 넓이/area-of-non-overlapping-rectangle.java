@@ -10,10 +10,10 @@ public class Main {
         int arr [][] = new int[offset][offset];
 
         for(int i = 0; i < 3; i++){
-            int x1 = sc.nextInt();
-            int y1 = sc.nextInt();
-            int x2 = sc.nextInt();
-            int y2 = sc.nextInt();
+            int x1 = sc.nextInt() + offset;
+            int y1 = sc.nextInt() + offset;
+            int x2 = sc.nextInt() + offset;
+            int y2 = sc.nextInt() + offset;
 
             for(int c = x1; c < x2; c++) {
 
