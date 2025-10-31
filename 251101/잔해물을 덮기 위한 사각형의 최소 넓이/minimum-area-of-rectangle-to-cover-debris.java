@@ -29,41 +29,25 @@ public class Main {
         int maxX = Integer.MIN_VALUE;
         int maxY = Integer.MIN_VALUE;
 
-        int area = 0;
-         for(int i = 0; i < offset*2; i++){
-            for(int j = 0; j < offset*2; j++){
-                if(arr[i][j] == 1) {
-                    area +=1;
-                }
+        for(int i = 0; i < offset*2; i++) {
+            for (int j = 0; j < offset*2; j++){
+                if(arr[j][i] == 1) minX = i;
+                if(arr[i][j] == 1) minY = i;
             }
         }
 
-        for(int i = 0; i < offset*2; i++){
-            for(int j = 0; j < offset*2; j++){
-                if(arr[i][j] == 1) {
-                    minX = i;
-                    minY = j;
-                }
+        for(int i = offset*2-1; i > -1; i--) {
+            for (int j = offset*2-1; j > -1; j--){
+                if(arr[j][i] == 1) maxX = i;
+                if(arr[i][j] == 1) maxY = i;
             }
         }
-
-
+        
         
 
-        for(int i = offset*2-1; i > -1; i--){
-            for(int j = offset*2-1; j > -1; j--){
-                if(arr[i][j] == 1) {
-                    maxX = i;
-                    maxY = j;
-                }
-            }
+        // System.out.println(minX +" " + minY + " " + maxX + " " + maxY);
 
-        }
-
-        //  System.out.println(maxX + " " + maxY + " " + minX + " " + minY);
-
-        int answer = (maxX-minX -1) * (maxY-minY - 1);
-
+        int answer = (maxX - minX-1) * (maxY - minY-1);
         System.out.println(answer);
 
 
