@@ -4,7 +4,7 @@ num_arr = [
     int(input()) for i in range(N)
 ]
 
-max_num_count = 0;
+max_num_count = 1;
 count = 1;
 
 
