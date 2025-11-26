@@ -5,8 +5,8 @@ public class Main {
         // Please write your code here.
         Scanner sc = new Scanner(System.in);
 
-        int time_A[] = new int[1001];
-        int time_B[] = new int[1001];
+        int time_A[] = new int[1000*1000];
+        int time_B[] = new int[1000*1000];
 
         int start = 0;
         int N = sc.nextInt();
