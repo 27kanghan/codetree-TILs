@@ -66,7 +66,7 @@ else :
 
 #겹치는지 판별 위한 flag
 
-flag = False;
+flag = True;
 answer = 0;
 
 #valid
