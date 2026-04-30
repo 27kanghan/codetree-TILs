@@ -9,7 +9,7 @@ for _ in range(N) :
 
 answer = 0
 
-for i in range(3):
+for i in range(4):
     cup = [0] * 4
     point = 0
     cup[i] = 1
